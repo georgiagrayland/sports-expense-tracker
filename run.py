@@ -25,7 +25,8 @@ def add_expense(item_or_resource, price, date, expense_group):
 
 
 #Output and processing program
-choice = -1 #This will be the number input by the user 
+#choice = -1 #This will be the number input by the user 
+choice = 1
 while choice != 0:
     #Create and display input choice list to users
     print('Welcome to Athleticoin, \n Manage your sports expenses here! \n')
@@ -34,5 +35,6 @@ while choice != 0:
     print('3. Create Transport Expense')
     print('4. Create Clothing or Footwear Expense')
     print('5. Allocate to savings')
-    print('6. Save Expenses and Show All')
+    print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear')
+    option = int(input('Please choose an action: \n'))
