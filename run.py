@@ -1,6 +1,6 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
-#Import libraries
+# Import libraries
 import numpy as np
 import pandas as pd
 from datetime import date
@@ -11,7 +11,7 @@ PRICES = []
 DATES = []
 EXPENSE_GROUPS = []
 
-#Function to add expenses to lists and structure input data 
+# Function to add expenses to lists and structure input data 
 
 def add_expense(item_or_resource, price, date, expense_group):
     """
@@ -24,11 +24,11 @@ def add_expense(item_or_resource, price, date, expense_group):
     EXPENSE_GROUPS.append(expense_group)
 
 
-#Output and processing program
-#choice = -1 #This will be the number input by the user 
+# Output and processing program
+# This will be the number input by the user: 
 choice = 1
 while choice != 0:
-    #Create and display input choice list to users
+    # Create and display input choice list to users
     print('Welcome to Athleticoin, \n Manage your sports expenses here! \n')
     print('1. Create Equipment Expense')
     print('2. Create Coaching Expense')
@@ -38,3 +38,38 @@ while choice != 0:
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear')
     option = int(input('Please choose an action: \n'))
+
+    print('\n')
+    # Check input choice from the user 
+    if choice == 0:
+        print('You are exiting the program')
+        break
+    elif choice == 1:
+        print('Add Equipment Cost')
+        expense_group = 'EQUIPMENT'
+    elif choice == 2:
+        print('Add Coaching Cost')
+        expense_group = 'COACHING'
+    elif choice == 3: 
+        print('Add Transport Cost')
+        expense_group = 'TRANSPORT'
+    elif choice == 4: 
+        print('Add Clothing or Footwear Cost')
+        expense_group = 'CLOTHING'
+    elif choice == 5:
+        print('Allocate to Savings Fund')
+        expense_group = 'SAVINGS'
+    elif choice == 6:
+        # Show Data Frame
+        expense_report = pd.DataFrame()
+        expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
+        expense_report = ['PRICES'] = PRICES
+        expense_report = ['DATES'] = DATES
+        expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
+        # Save the report?
+        expense_report.to_csv('report.csv')
+        #Show Report??
+        print(expense_report)
+    else:
+        
+
