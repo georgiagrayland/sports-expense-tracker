@@ -60,7 +60,7 @@ while choice != 0:
         print('Allocate to Savings Fund')
         expense_group = 'SAVINGS'
     elif choice == 6:
-        # Show Data Frame - MAKE THIS INTO A FUNCTION??
+        # Show Data Frame - MAKE THIS INTO A FUNCTION TO CALL HERE ??
         expense_report = pd.DataFrame()
         expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
         expense_report['PRICES'] = PRICES
@@ -78,7 +78,9 @@ while choice != 0:
     # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
         item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
-        price = input('Enter the price of this expense: \n')
+        price = float(input('Enter the price of this expense: \n'))
+        date = date.today()
+        add_expense(item_or_resource, price, date, expense_group)
 
 
     # Create else statement for user to allocate some savings to the 
