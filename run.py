@@ -36,8 +36,8 @@ while choice != 0:
     print('4. Create Clothing or Footwear Expense')
     print('5. Allocate to savings')
     print('6. Save Expenses and Show My Report')
-    print('0. Exit and Clear')
-    option = int(input('Please choose an action: \n'))
+    print('0. Exit and Clear\n')
+    choice = int(input('Please choose an action: \n'))
 
     print('\n')
     # Check input choice from the user 
@@ -68,13 +68,13 @@ while choice != 0:
         expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
         # Save the report?
         expense_report.to_csv('report.csv')
-        #Show Report??
+        # Show Report??
         print(expense_report)
     else:
         print('You chose an invalid character.\n Please choose a number between 0 and 6')
 
     
-    #Create inputs for user to add price and expense name
+    # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5:
-        item_or_resource = input(f'Enter the item or service under the expense group:{expense_group}')
+        item_or_resource = input(f'Enter the expense under the {expense_group} group:')
         
