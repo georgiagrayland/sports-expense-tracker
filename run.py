@@ -63,8 +63,8 @@ while choice != 0:
         # Show Data Frame
         expense_report = pd.DataFrame()
         expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
-        expense_report = ['PRICES'] = PRICES
-        expense_report = ['DATES'] = DATES
+        expense_report['PRICES'] = PRICES
+        expense_report['DATES'] = DATES
         expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
         # Save the report?
         expense_report.to_csv('report.csv')
@@ -72,5 +72,9 @@ while choice != 0:
         print(expense_report)
     else:
         print('You chose an invalid character.\n Please choose a number between 0 and 6')
-        
 
+    
+    #Create inputs for user to add price and expense name
+    if choice == 1 or choice == 2 or choice == 3 or choice == 4 or choice == 5:
+        item_or_resource = input(f'Enter the item or service under the expense group:{expense_group}')
+        
