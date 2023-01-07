@@ -71,5 +71,6 @@ while choice != 0:
         #Show Report??
         print(expense_report)
     else:
+        print('You chose an invalid character.\n Please choose a number between 0 and 6')
         
 
