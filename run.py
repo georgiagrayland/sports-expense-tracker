@@ -1,9 +1,9 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 # Import libraries
+from datetime import date
 import numpy as np
 import pandas as pd
-from datetime import date
 
 # Create empty lists to organise data
 ITEMS_OR_RESOURCES = []
@@ -15,8 +15,8 @@ EXPENSE_GROUPS = []
 # Function to add expenses to lists and structure input data 
 def add_expense(item_or_resource, price, date, expense_group):
     """
-    Adds all aspects of each expense to a list. 
-    Stores the data input by the for each part of an individual expense. 
+    Adds all aspects of each expense to a list.
+    Stores the data input by the for each part of an individual expense.
     """
     ITEMS_OR_RESOURCES.append(item_or_resource)
     PRICES.append(formatted_price)
@@ -34,15 +34,16 @@ def show_report():
     expense_report['PRICES'] = PRICES
     expense_report['DATES'] = DATES
     expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
-    expense_report['TOTAL'] = expense_report['PRICES'].sum()
+    expense_report.loc['TOTAL', 'PRICES'] = expense_report['PRICES'].sum()
     # Save the report
     expense_report.to_csv('report.csv')
     # Show Report
     print(expense_report)
 
 
+# MAKE THIS A FUNCTION
 # Output and processing program
-# This will be the number input by the user: 
+# This will be the number input by the user:
 choice = 1
 while choice != 0:
     # Create and display input choice list to users
