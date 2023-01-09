@@ -35,6 +35,7 @@ def show_report():
     expense_report['DATES'] = DATES
     expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
     expense_report.loc['TOTAL', 'PRICES'] = expense_report['PRICES'].sum()
+    expense_report = expense_report.fillna('')
     # Save the report
     expense_report.to_csv('report.csv')
     # Show Report
