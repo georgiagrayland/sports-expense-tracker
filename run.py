@@ -92,9 +92,8 @@ while choice != 0:
         add_expense(item_or_resource, price, date, expense_group)
         
 
-
-    # Create else statement for user to allocate some savings to the 
-    # expense tracker???
+    # ADD validation for user input of price - only a number
+  
     # Create a new variable for savings ? 
         
     # Create main function 
