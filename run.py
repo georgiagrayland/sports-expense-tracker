@@ -88,3 +88,6 @@ while choice != 0:
     # expense tracker???
     # Create a new variable for savings ? 
         
+    # Create main function 
+
+    # Add colorama ? 
