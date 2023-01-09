@@ -5,14 +5,14 @@ import numpy as np
 import pandas as pd
 from datetime import date
 
-#Create empty lists to organise data
+# Create empty lists to organise data
 ITEMS_OR_RESOURCES = []
 PRICES = []
 DATES = []
 EXPENSE_GROUPS = []
 
-# Function to add expenses to lists and structure input data 
 
+# Function to add expenses to lists and structure input data 
 def add_expense(item_or_resource, price, date, expense_group):
     """
     Adds all aspects of each expense to a list. 
@@ -22,6 +22,23 @@ def add_expense(item_or_resource, price, date, expense_group):
     PRICES.append(formatted_price)
     DATES.append(date)
     EXPENSE_GROUPS.append(expense_group)
+
+
+def show_report():
+    """
+    Function to display expenses input by user
+    Shows as a data frame
+    """
+    expense_report = pd.DataFrame()
+    expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
+    expense_report['PRICES'] = PRICES
+    expense_report['DATES'] = DATES
+    expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
+    # expense_report.loc['Total'] = PRICES.sum()
+    # Save the report?
+    expense_report.to_csv('report.csv')
+    # Show Report??
+    print(expense_report)
 
 
 # Output and processing program
@@ -61,15 +78,7 @@ while choice != 0:
         expense_group = 'SAVINGS'
     elif choice == 6:
         # Show Data Frame - MAKE THIS INTO A FUNCTION TO CALL HERE ??
-        expense_report = pd.DataFrame()
-        expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
-        expense_report['PRICES'] = PRICES
-        expense_report['DATES'] = DATES
-        expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
-        # Save the report?
-        expense_report.to_csv('report.csv')
-        # Show Report??
-        print(expense_report)
+        show_report()
     else:
         print('You chose an invalid character.')
         print('Please choose a number between 0 and 6\n')
@@ -90,11 +99,9 @@ while choice != 0:
         formatted_price = round(float(price), 2)
         date = date.today()
         add_expense(item_or_resource, price, date, expense_group)
-        
+
 
     # ADD validation for user input of price - only a number
-  
-    # Create a new variable for savings ? 
         
     # Create main function 
 
