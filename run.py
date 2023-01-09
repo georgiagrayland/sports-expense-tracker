@@ -19,7 +19,7 @@ def add_expense(item_or_resource, price, date, expense_group):
     Stores the data input by the for each part of an individual expense. 
     """
     ITEMS_OR_RESOURCES.append(item_or_resource)
-    PRICES.append(price)
+    PRICES.append(formatted_price)
     DATES.append(date)
     EXPENSE_GROUPS.append(expense_group)
 
@@ -78,7 +78,8 @@ while choice != 0:
     # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
         item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
-        price = float(input('Enter the price of this expense: \n'))
+        price = input('Enter the price of this expense: \n')
+        formatted_price = round(float(price), 2)
         date = date.today()
         add_expense(item_or_resource, price, date, expense_group)
 
