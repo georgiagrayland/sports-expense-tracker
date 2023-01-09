@@ -75,13 +75,22 @@ while choice != 0:
         print('Please choose a number between 0 and 6\n')
 
 
-    # Create inputs for user to add price and expense name
+    # Create inputs for user to add price and expense name - ADD FUNCTION NAME 
+    # ADD FUNCTION TO MAIN 
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
         item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
         price = input('Enter the price of this expense: \n')
         formatted_price = round(float(price), 2)
         date = date.today()
         add_expense(item_or_resource, price, date, expense_group)
+    
+    if choice == 5:
+        item_or_resource = input(f'Enter the reason you would like to allocate funds to {expense_group}\n')
+        price = input('Enter the amount you would like to allocate\n')
+        formatted_price = round(float(price), 2)
+        date = date.today()
+        add_expense(item_or_resource, price, date, expense_group)
+        
 
 
     # Create else statement for user to allocate some savings to the 
