@@ -41,6 +41,7 @@ def show_report():
     expense_report.to_csv('report.csv')
     # Show Report
     print(expense_report)
+    print()
 
 
 # Output and processing program
@@ -89,6 +90,7 @@ while choice != 0:
 # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
         item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
+        # validate_input()
         price = input('Enter the price of this expense: \n')
         formatted_price = round(float(price), 2)
         date = date.today()
@@ -104,10 +106,12 @@ while choice != 0:
 
 def validate_input():
     """
-    Validates user input of price of expense 
+    Validates user input of name of expense
     Raises a value error if user has not entered a valid number
     """
+    if item_or_resource.strip() == "":
+        raise ValueError(
+            f'Please enter a name for your {expense_group} expense')
+    else:
+        print(f'You created an expense for {item_or_resource}')
 
-
-
-    # Add colorama ? 
