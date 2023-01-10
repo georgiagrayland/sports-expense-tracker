@@ -90,8 +90,9 @@ while choice != 0:
 # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
         item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
-        # validate_input()
         price = input('Enter the price of this expense: \n')
+        # if not isinstance(price, int):
+            # raise ValueError('Invalid input type, please enter a number')
         formatted_price = round(float(price), 2)
         date = date.today()
         add_expense(item_or_resource, formatted_price, date, expense_group)
@@ -99,19 +100,10 @@ while choice != 0:
     if choice == 5:
         item_or_resource = input(f'Enter the reason for allocating funds to {expense_group}\n')
         price = input('Enter the amount you would like to allocate\n')
+        # if not isinstance(price, int):
+            # raise ValueError('Invalid input type, please enter a number')
+        add_expense(item_or_resource, formatted_price, date, expense_group)
         formatted_price = round(float(price), 2)
         date = date.today()
-        add_expense(item_or_resource, formatted_price, date, expense_group)
-
-
-def validate_input():
-    """
-    Validates user input of name of expense
-    Raises a value error if user has not entered a valid number
-    """
-    if item_or_resource.strip() == "":
-        raise ValueError(
-            f'Please enter a name for your {expense_group} expense')
-    else:
-        print(f'You created an expense for {item_or_resource}')
+        
 
