@@ -79,7 +79,7 @@ while choice != 0:
         print('Allocate to Savings Fund')
         expense_group = 'SAVINGS'
     elif choice == 6:
-        # Show Data Frame
+        # Show Expenses in Data Frame 
         show_report()
     else:
         print('You chose an invalid character.')
@@ -102,8 +102,12 @@ while choice != 0:
         add_expense(item_or_resource, formatted_price, date, expense_group)
 
 
+def validate_input():
+    """
+    Validates user input of price of expense 
+    Raises a value error if user has not entered a valid number
+    """
 
-    # ADD validation for user input of price - only a number
-        
+
 
     # Add colorama ? 
