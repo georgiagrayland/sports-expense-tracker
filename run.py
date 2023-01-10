@@ -89,7 +89,8 @@ while choice != 0:
 
 # Create inputs for user to add price and expense name
     if choice == 1 or choice == 2 or choice == 3 or choice == 4:
-        item_or_resource = input(f'Enter the name of this expense under the {expense_group} group \n')
+        item_or_resource = input(
+            f'Enter the name of this {expense_group} expense\n')
         price = input('Enter the price of this expense: \n')
         # if not isinstance(price, int):
             # raise ValueError('Invalid input type, please enter a number')
@@ -98,7 +99,8 @@ while choice != 0:
         add_expense(item_or_resource, formatted_price, date, expense_group)
     
     if choice == 5:
-        item_or_resource = input(f'Enter the reason for allocating funds to {expense_group}\n')
+        item_or_resource = input(
+            f'Enter the reason for allocating funds to {expense_group}\n')
         price = input('Enter the amount you would like to allocate\n')
         # if not isinstance(price, int):
             # raise ValueError('Invalid input type, please enter a number')
