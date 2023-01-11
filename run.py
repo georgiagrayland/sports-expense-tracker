@@ -102,7 +102,7 @@ while choice != 0:  # Put this while loop in a function
         # Show Expenses in Data Frame 
         show_report()
     elif not re.search(r'^[-+]?[0-6]+$', choice):
-        print('Invalid input, please enter a number from the options!')
+        print('Invalid input, please enter a value from the options!')
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
@@ -111,7 +111,7 @@ while choice != 0:  # Put this while loop in a function
 # Create inputs for user to add price and expense name
     if choice == '1' or choice == '2' or choice == '3' or choice == '4':
         item_or_resource = input(
-            f'Enter the name of this {expense_group} expense\n')
+            f'Enter the name of this {expense_group} expense\n') # ADD VALIDATION FOR ENTRY 
         price = input('Enter the price of this expense: \n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
@@ -122,7 +122,7 @@ while choice != 0:  # Put this while loop in a function
 
     if choice == '5':
         item_or_resource = input(
-            f'Enter the reason for allocating funds to {expense_group}\n')
+            f'Enter the reason for allocating funds to {expense_group}\n') # ADD VALIDATION FOR ENTRY 
         price = input('Enter the amount you would like to allocate\n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
@@ -131,5 +131,8 @@ while choice != 0:  # Put this while loop in a function
         else:
             formatted_price = round(float(price), 2)
             add_expense(item_or_resource, formatted_price, date, expense_group)
+
+
+
         
 
