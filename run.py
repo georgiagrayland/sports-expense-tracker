@@ -2,6 +2,7 @@
 
 # Import libraries
 from datetime import date
+import re
 import pandas as pd
 
 # Create empty lists to organise data
