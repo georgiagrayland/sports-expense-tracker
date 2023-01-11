@@ -33,6 +33,7 @@ def show_report():
     expense_report = pd.DataFrame()
     expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
     expense_report['PRICES'] = PRICES
+    expense_report['PRICE + VAT'] = expense_report['PRICES'] * 1.2
     expense_report['DATES'] = DATES
     expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
     expense_report.loc['TOTAL', 'PRICES'] = expense_report['PRICES'].sum()
