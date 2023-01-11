@@ -124,10 +124,12 @@ while choice != 0:  # Put this while loop in a function
         item_or_resource = input(
             f'Enter the reason for allocating funds to {expense_group}\n')
         price = input('Enter the amount you would like to allocate\n')
-        # if not isinstance(price, int):
-            # raise ValueError('Invalid input type, please enter a number')
-        add_expense(item_or_resource, formatted_price, date, expense_group)
-        formatted_price = round(float(price), 2)
-        date = date.today()
+        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+            print(
+                'Invalid input. Please enter an amount to add to savings'
+            )
+        else:
+            formatted_price = round(float(price), 2)
+            add_expense(item_or_resource, formatted_price, date, expense_group)
         
 
