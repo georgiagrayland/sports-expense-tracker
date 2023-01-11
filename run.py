@@ -65,10 +65,9 @@ def show_intro():
 
 
 # Output and processing program
-while choice != 0:  # Put this while loop in a function
+while choice != 0:  # Put this while loop in a function??
     # Create and display input choice list to users
     show_intro()
-    # Create additional instructions (in a function)
     print('1. Create Equipment Expense')
     print('2. Create Coaching Expense')
     print('3. Create Transport Expense')
