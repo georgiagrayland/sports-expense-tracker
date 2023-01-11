@@ -101,7 +101,7 @@ while choice != 0:  # Put this while loop in a function
     elif choice == '6':
         # Show Expenses in Data Frame 
         show_report()
-    elif not re.search(r'^[-+]?[0-9]+$', choice):
+    elif not re.search(r'^[-+]?[0-6]+$', choice):
         print('Invalid input, please enter a number from the options!')
     else:
         print('You chose an invalid number.')
