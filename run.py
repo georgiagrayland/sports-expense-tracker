@@ -64,6 +64,9 @@ def show_intro():
     print()
 
 
+show_intro()
+
+
 def input_choices():
     """
     Shows input choices to the user 
@@ -76,12 +79,12 @@ def input_choices():
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
   
-  
+
 # MAKE THIS A FUNCTION
 # Output and processing program
-while choice != 0:  # Put this while loop in a function??
+while True:  # choice != 0:  # Put this while loop in a function??
     # Create and display input choice list to users
-    show_intro()
+    # show_intro()
     input_choices()
     choice = input('Please choose an action: \n')
     print()
@@ -110,11 +113,11 @@ while choice != 0:  # Put this while loop in a function??
         show_report()
     elif not re.search(r'^[-+]?[0-6]+$', choice):
         print('Invalid input, please enter a value from the options!')
-        input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO
+        # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
-        input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO
+        input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
 
 
 # Create inputs for user to add price and expense name
