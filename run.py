@@ -58,7 +58,7 @@ def show_intro():
     print('There are multiple categories to add expenses to')
     print('Your saved report provides an overview of all your expenses')
     print('You will be provided with a total and added VAT on saving a report')
-    print('Press a number related to one of the options below to get started!\n')
+    print('Press a number related to one of the options below to get started!')
     print()
 
 
@@ -68,16 +68,15 @@ choice = 1
 while choice != 0: # Put this while loop in a function
     # Create and display input choice list to users
     show_intro()
-    # print('Welcome to Athleticoin, \n Manage your sports expenses here! \n')
     # Create additional instructions (in a function)
     print('1. Create Equipment Expense')
     print('2. Create Coaching Expense')
     print('3. Create Transport Expense')
     print('4. Create Clothing or Footwear Expense')
-    print('5. Allocate to savings') # Write additional instructions about this 
+    print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    choice = int(input('Please choose an action: \n')) # Add additional instruction here 
+    choice = int(input('Please choose an action: \n'))
 
     print('\n')
     # Check input choice from the user - make this a function to call in main
