@@ -102,8 +102,8 @@ while choice != 0:  # Put this while loop in a function
         # Show Expenses in Data Frame 
         show_report()
     else:
-        print('You chose an invalid character.')
-        print('Please choose a number between 0 and 6\n')
+        print('You chose an invalid number.')
+        print('Please choose a number option between 0 and 6\n')
 
 
 # Create inputs for user to add price and expense name
