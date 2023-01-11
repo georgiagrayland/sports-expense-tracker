@@ -117,7 +117,7 @@ while True:  # choice != 0:  # Put this while loop in a function??
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
-        input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
+        # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
 
 
 # Create inputs for user to add price and expense name
