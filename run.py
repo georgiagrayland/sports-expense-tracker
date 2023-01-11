@@ -12,6 +12,7 @@ DATES = []
 EXPENSE_GROUPS = []
 
 # Global Variables??
+date = date.today()
 
 
 # Function to add expenses to lists and structure input data 
@@ -113,12 +114,13 @@ while choice != 0:  # Put this while loop in a function
         item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
         price = input('Enter the price of this expense: \n')
-        # if not isinstance(price, int):
-            # raise ValueError('Invalid input type, please enter a number')
         formatted_price = round(float(price), 2)
-        date = date.today()
-        add_expense(item_or_resource, formatted_price, date, expense_group)
-    
+        if not price.isnumeric():
+            print(
+                'Invalid input. Please enter a number for the expense price')
+        else:
+            add_expense(item_or_resource, formatted_price, date, expense_group)
+
     if choice == '5':
         item_or_resource = input(
             f'Enter the reason for allocating funds to {expense_group}\n')
