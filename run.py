@@ -76,38 +76,40 @@ while choice != 0:  # Put this while loop in a function
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    choice = int(input('Please choose an action: \n'))
+    choice = input('Please choose an action: \n')
+    print()
 
-    print('\n')
     # Check input choice from the user - make this a function to call in main
-    if choice == 0:
+    if choice == '0':
         print('You are exiting the program')
         break
-    elif choice == 1:
+    elif choice == '1':
         print('Add Equipment Cost')
         expense_group = 'EQUIPMENT'
-    elif choice == 2:
+    elif choice == '2':
         print('Add Coaching Cost')
         expense_group = 'COACHING'
-    elif choice == 3: 
+    elif choice == '3': 
         print('Add Transport Cost')
         expense_group = 'TRANSPORT'
-    elif choice == 4: 
+    elif choice == '4': 
         print('Add Clothing or Footwear Cost')
         expense_group = 'CLOTHING'
-    elif choice == 5:
+    elif choice == '5':
         print('Allocate to Savings Fund')
         expense_group = 'SAVINGS'
-    elif choice == 6:
+    elif choice == '6':
         # Show Expenses in Data Frame 
         show_report()
+    elif not re.search(r'^[-+]?[0-9]+$', choice):
+        print('Invalid input, please enter a number from the options!')
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
 
 
 # Create inputs for user to add price and expense name
-    if choice == 1 or choice == 2 or choice == 3 or choice == 4:
+    if choice == '1' or choice == '2' or choice == '3' or choice == '4':
         item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
         price = input('Enter the price of this expense: \n')
@@ -117,7 +119,7 @@ while choice != 0:  # Put this while loop in a function
         date = date.today()
         add_expense(item_or_resource, formatted_price, date, expense_group)
     
-    if choice == 5:
+    if choice == '5':
         item_or_resource = input(
             f'Enter the reason for allocating funds to {expense_group}\n')
         price = input('Enter the amount you would like to allocate\n')
