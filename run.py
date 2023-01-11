@@ -111,7 +111,9 @@ while choice != 0:  # Put this while loop in a function
 # Create inputs for user to add price and expense name
     if choice == '1' or choice == '2' or choice == '3' or choice == '4':
         item_or_resource = input(
-            f'Enter the name of this {expense_group} expense\n') # ADD VALIDATION FOR ENTRY 
+            f'Enter the name of this {expense_group} expense\n')
+        if item_or_resource == "":
+            print('Please assign an expense name')
         price = input('Enter the price of this expense: \n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
@@ -122,7 +124,9 @@ while choice != 0:  # Put this while loop in a function
 
     if choice == '5':
         item_or_resource = input(
-            f'Enter the reason for allocating funds to {expense_group}\n') # ADD VALIDATION FOR ENTRY 
+            f'Enter the reason for allocating funds to {expense_group}\n')
+        if item_or_resource == "":
+            print('Please assign an expense name')
         price = input('Enter the amount you would like to allocate\n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
