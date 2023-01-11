@@ -65,7 +65,6 @@ def show_intro():
 
 
 # Output and processing program
-# This will be the number input by the user:
 while choice != 0:  # Put this while loop in a function
     # Create and display input choice list to users
     show_intro()
@@ -114,11 +113,11 @@ while choice != 0:  # Put this while loop in a function
         item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
         price = input('Enter the price of this expense: \n')
-        formatted_price = round(float(price), 2)
-        if not price.isnumeric():
+        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
                 'Invalid input. Please enter a number for the expense price')
         else:
+            formatted_price = round(float(price), 2)
             add_expense(item_or_resource, formatted_price, date, expense_group)
 
     if choice == '5':
