@@ -3,6 +3,7 @@
 # Import libraries
 from datetime import date
 import pandas as pd
+# import matplotlib.pyplot as plt
 
 # Create empty lists to organise data
 ITEMS_OR_RESOURCES = []
@@ -46,12 +47,28 @@ def show_report():
     print()
 
 
+def show_intro():
+    """
+    Shows introduction message and instructions
+    to user
+    """
+    print()
+    print('Welcome to Athleticoin!')
+    print('An easy way to manage your sports expenses\n')
+    print('There are multiple categories to add expenses to')
+    print('Your saved report provides an overview of all your expenses')
+    print('You will be provided with a total and added VAT on saving a report')
+    print('Press a number related to one of the options below to get started!\n')
+    print()
+
+
 # Output and processing program
 # This will be the number input by the user:
 choice = 1
 while choice != 0: # Put this while loop in a function
     # Create and display input choice list to users
-    print('Welcome to Athleticoin, \n Manage your sports expenses here! \n')
+    show_intro()
+    # print('Welcome to Athleticoin, \n Manage your sports expenses here! \n')
     # Create additional instructions (in a function)
     print('1. Create Equipment Expense')
     print('2. Create Coaching Expense')
