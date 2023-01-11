@@ -11,8 +11,9 @@ PRICES = []
 DATES = []
 EXPENSE_GROUPS = []
 
-# Global Variables??
+# Global Variables
 date = date.today()
+choice = 1
 
 
 # Function to add expenses to lists and structure input data 
@@ -65,7 +66,6 @@ def show_intro():
 
 # Output and processing program
 # This will be the number input by the user:
-choice = 1
 while choice != 0:  # Put this while loop in a function
     # Create and display input choice list to users
     show_intro()
