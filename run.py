@@ -123,6 +123,7 @@ while True:  # choice != 0:  # Put this while loop in a function??
 
 
 # Create inputs for user to add price and expense name
+
     if choice == '1' or choice == '2' or choice == '3' or choice == '4':
         item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
@@ -137,18 +138,24 @@ while True:  # choice != 0:  # Put this while loop in a function??
             add_expense(item_or_resource, formatted_price, date, expense_group)
 
     if choice == '5':
-        item_or_resource = input(
-            f'Enter the reason for allocating funds to {expense_group}\n')
-        if item_or_resource == "":
-            print('Please assign an expense name')
-        price = input('Enter the amount you would like to allocate\n')
-        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
-            print(
-                'Invalid input. Please enter an amount to add to savings'
-            )
-        else:
-            formatted_price = round(float(price), 2)
-            add_expense(item_or_resource, formatted_price, date, expense_group)
+        while True:
+            item_or_resource = input(
+                f'Enter the reason for allocating funds to {expense_group}\n')
+            if item_or_resource == "":
+                print('Please assign an expense name')
+                continue
+            price = input('Enter the amount you would like to allocate\n')
+            if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+                print(
+                    'Invalid input. Please enter an amount to add to savings'
+                )
+                continue
+            else:
+                formatted_price = round(float(price), 2)
+                add_expense(item_or_resource, formatted_price, date, expense_group)
+                input_choices()
+                choice = input('Please choose an action: \n')
+                break
 
 
 
