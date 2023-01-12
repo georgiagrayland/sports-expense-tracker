@@ -97,7 +97,7 @@ def input_savings_number():
         price = input('Enter the amount you would like to allocate\n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
-                'Invalid input. Please enter an amount to add to savings'
+                'Invalid input. Please enter a number to add to savings'
                 )
             input_savings_number()
         else:
