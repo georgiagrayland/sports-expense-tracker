@@ -3,6 +3,7 @@
 # Import libraries
 from datetime import date
 import re
+import numpy as np
 import pandas as pd
 
 # Create empty lists to organise data
@@ -37,6 +38,7 @@ def show_report():
     expense_report['ITEMS_OR_RESOURCES'] = ITEMS_OR_RESOURCES
     expense_report['PRICES'] = PRICES
     expense_report['+ VAT'] = expense_report['PRICES'] * 1.2
+    expense_report['+ VAT'] = np.round(expense_report['+ VAT'], decimals=2)
     expense_report['DATES'] = DATES
     expense_report['EXPENSE_GROUPS'] = EXPENSE_GROUPS
     expense_report.loc['TOTAL', 'PRICES'] = expense_report['PRICES'].sum()
