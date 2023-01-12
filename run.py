@@ -15,6 +15,10 @@ EXPENSE_GROUPS = []
 # Global Variables
 date = date.today()
 choice = 1
+item_or_resource = ""
+price = ""
+expense_group = ""
+formatted_price = ""
 
 
 # Function to add expenses to lists and structure input data 
@@ -80,6 +84,41 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
+
+
+def input_savings_number():
+    """
+    Prompts user to enter value of savings
+    Only takes integers as inputs 
+    """
+    while True:
+        global price
+        price = input('Enter the amount you would like to allocate\n')
+        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+            print(
+                'Invalid input. Please enter an amount to add to savings'
+                )
+        else:
+            global formatted_price = round(float(price), 2)
+            add_expense(
+                item_or_resource, formatted_price, date, expense_group)
+            break
+
+
+def input_savings_reason():
+    """
+    Prompts user to input reason for allocating funds to savings
+    Requires input to continue
+    """
+    # if choice == '5':
+        # while True:
+    global item_or_resource
+    item_or_resource = input(
+        'Enter the reason for allocating funds to savings\n')
+    if item_or_resource == "":
+        print('Please assign an expense name')
+    else:
+        input_savings_number()
   
 
 # MAKE THIS A FUNCTION
@@ -109,6 +148,7 @@ while True:  # choice != 0:  # Put this while loop in a function??
         expense_group = 'CLOTHING'
     elif choice == '5':
         print('Allocate to Savings Fund')
+        input_savings_reason()
         expense_group = 'SAVINGS'
     elif choice == '6':
         # Show Expenses in Data Frame 
@@ -137,6 +177,7 @@ while True:  # choice != 0:  # Put this while loop in a function??
             formatted_price = round(float(price), 2)
             add_expense(item_or_resource, formatted_price, date, expense_group)
 
+"""
     if choice == '5':
         while True:
             item_or_resource = input(
@@ -156,9 +197,13 @@ while True:  # choice != 0:  # Put this while loop in a function??
                 add_expense(
                     item_or_resource, formatted_price, date, expense_group)
                 break
-                
+"""
 
 
 
-        
+
+
+
+
+
 
