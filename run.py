@@ -144,12 +144,13 @@ while True:  # choice != 0:  # Put this while loop in a function??
             if item_or_resource == "":
                 print('Please assign an expense name')
                 continue
+            #  while price
             price = input('Enter the amount you would like to allocate\n')
             if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
                 print(
                     'Invalid input. Please enter an amount to add to savings'
                 )
-                price = input('Enter the amount you would like to allocate\n')
+                # price = input('Enter the amount you would like to allocate\n')
                 # continue
                 break
             else:
