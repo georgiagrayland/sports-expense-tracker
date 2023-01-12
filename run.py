@@ -149,7 +149,9 @@ while True:  # choice != 0:  # Put this while loop in a function??
                 print(
                     'Invalid input. Please enter an amount to add to savings'
                 )
-                continue
+                price = input('Enter the amount you would like to allocate\n')
+                # continue
+                break
             else:
                 formatted_price = round(float(price), 2)
                 add_expense(item_or_resource, formatted_price, date, expense_group)
