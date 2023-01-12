@@ -66,6 +66,7 @@ def show_intro():
     print('There are multiple categories to add expenses to')
     print('Your saved report provides an overview of all your expenses')
     print('You will be provided with a total and added VAT on saving a report')
+    print('NOTE: all numbers input will be rounded to 2 decimal places')
     print('Press a number related to one of the options below to get started!')
     print()
 
