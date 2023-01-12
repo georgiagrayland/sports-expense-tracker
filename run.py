@@ -16,7 +16,7 @@ EXPENSE_GROUPS = []
 date = date.today()
 choice = 1
 item_or_resource = ""
-price = ""
+price = -1
 expense_group = ""
 formatted_price = ""
 
@@ -99,7 +99,7 @@ def input_savings_number():
                 'Invalid input. Please enter an amount to add to savings'
                 )
         else:
-            global formatted_price = round(float(price), 2)
+            formatted_price = round(float(price), 2)
             add_expense(
                 item_or_resource, formatted_price, date, expense_group)
             break
@@ -172,10 +172,13 @@ while True:  # choice != 0:  # Put this while loop in a function??
         price = input('Enter the price of this expense: \n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
-                'Invalid input. Please enter a number for the expense price')
+                'Invalid input. Please enter a number')
+            price = input('Enter the price of this expense: \n')
         else:
             formatted_price = round(float(price), 2)
-            add_expense(item_or_resource, formatted_price, date, expense_group)
+            add_expense(
+                item_or_resource, formatted_price, date, expense_group)
+
 
 """
     if choice == '5':
