@@ -28,7 +28,7 @@ def add_expense(item_or_resource, price, date, expense_group):
     Stores the data input by the for each part of an individual expense.
     """
     ITEMS_OR_RESOURCES.append(item_or_resource)
-    PRICES.append(formatted_price)
+    PRICES.append(price)
     DATES.append(date)
     EXPENSE_GROUPS.append(expense_group)
 
@@ -92,7 +92,7 @@ def input_savings_number():
     Only takes integers as inputs 
     """
     while True:
-        global price
+        # global price
         price = input('Enter the amount you would like to allocate\n')
         if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
             print(
@@ -117,6 +117,7 @@ def input_savings_reason():
         'Enter the reason for allocating funds to savings\n')
     if item_or_resource == "":
         print('Please assign an expense name')
+        input_savings_reason()
     else:
         input_savings_number()
   
