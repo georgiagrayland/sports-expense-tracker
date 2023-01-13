@@ -74,20 +74,6 @@ def show_intro():
 
 show_intro()
 
-"""
-def check_input(choice):
-    # Checks the user inputs a number not a string
-    try:
-        choice = int(choice)
-        if choice >= 0 and choice <= 6:
-            return True
-        else:
-            print("Invalid input. Please enter a number between 0 and 6.")
-    except ValueError:
-        print("Invalid input. Please enter a number between 0 and 6.")
-    return False
-"""
-
 
 def input_choices():
     """
@@ -108,13 +94,6 @@ def input_choices():
     except ValueError:
         print(Fore.RED + 'Invalid entry. Please choose from the options')
         print(Style.RESET_ALL)
-    # if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', choice):
-        # print('Please enter a number from the options!')
-        # break
-    #except ValueError:
-        #print(
-            #Fore.RED + 'Invalid input. Please enter a number from the options!')
-        #print(Style.RESET_ALL)
 
 
 input_choices()
