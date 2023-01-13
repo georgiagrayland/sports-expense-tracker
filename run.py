@@ -62,14 +62,14 @@ def show_intro():
     to user
     """
     print()
-    print('Welcome to Athleticoin!')
+    print(Fore.GREEN + 'Welcome to Athleticoin!')
     print('An easy way to manage your sports expenses\n')
     print('There are multiple categories to add expenses to')
     print('Your saved report provides an overview of all your expenses')
     print('You will be provided with a total and added VAT on saving a report')
     print('NOTE: all numbers input will be rounded to 2 decimal places')
     print('Press a number related to one of the options below to get started!')
-    print()
+    print(Style.RESET_ALL)
 
 
 show_intro()
@@ -99,7 +99,8 @@ def input_choices():
     print('3. Create Transport Expense')
     print('4. Create Clothing or Footwear Expense')
     print('5. Allocate funds to team savings')
-    print('6. Save Expenses and Show My Report')
+    print(Fore.CYAN + '6. Save Expenses and Show My Report')
+    print(Style.RESET_ALL)
     print('0. Exit and Clear\n')
     global choice
     choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
@@ -130,8 +131,11 @@ def input_expense_price():
         formatted_price = round(float(price), 2)
         add_expense(
             item_or_resource, formatted_price, date, expense_group)
-        print('You added an expense. What you you like to do next?')
-        print()
+        print(
+            Fore.MAGENTA + 'You added an expense.')
+        print('What would you like to do next?')
+
+        print(Style.RESET_ALL)
         input_choices()
 
 
