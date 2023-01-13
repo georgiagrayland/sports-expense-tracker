@@ -68,6 +68,7 @@ def show_intro():
     print('Your saved report provides an overview of all your expenses')
     print('You will be provided with a total and added VAT on saving a report')
     print('NOTE: all numbers input will be rounded to 2 decimal places')
+    print('The minimum amount you can enter for a single expense is £1')
     print('Press a number related to one of the options below to get started!')
     print(Style.RESET_ALL)
 
@@ -114,7 +115,7 @@ def input_expense_price():
     Only accepts numbers as input
     """
     price = input('Enter the price of this expense: \n')
-    if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+    if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
         print(
             Fore.RED+'Invalid input. Please enter a number!', end='')
         print(Style.RESET_ALL)
@@ -153,7 +154,7 @@ def input_savings_number():
     Only takes integers as inputs 
     """
     price = input('Enter the amount you would like to allocate\n')
-    if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+    if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
         print(
             Fore.RED+'Invalid input. Please enter a number to add to savings'
             )
