@@ -2,6 +2,7 @@
 
 # Import libraries
 from datetime import date
+from colorama import Fore, Back, Style
 import re
 import numpy as np
 import pandas as pd
@@ -88,7 +89,8 @@ def input_choices():
     while True:
         try:
             global choice
-            choice = int(input('Please choose an action: \n'))
+            choice = int(input(Fore.RED + 'Please choose an action: \n'))
+            print(Style.RESET_ALL)
             break
         except ValueError:
             print('Invalid input. Please enter a number from the options!')
