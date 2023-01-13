@@ -144,7 +144,7 @@ def input_savings_number():
             formatted_price = round(float(price), 2)
             add_expense(
                 item_or_resource, formatted_price, date, expense_group)
-        break
+            input_choices()
 
 
 def input_savings_reason():
@@ -178,7 +178,7 @@ while True:
     if choice == '0':
         print('You are exiting the program')
         break
-    elif choice == '1':
+    elif choice == 1:
         # print('Add Equipment Cost')
         expense_group = 'EQUIPMENT'
         input_expense_name()
@@ -186,20 +186,19 @@ while True:
         print('Add Coaching Cost')
         expense_group = 'COACHING'
         input_expense_name()
-    elif choice == '3': 
+    elif choice == 3: 
         print('Add Transport Cost')
         expense_group = 'TRANSPORT'
         input_expense_name()
-    elif choice == '4':
+    elif choice == 4:
         print('Add Clothing or Footwear Cost')
         expense_group = 'CLOTHING'
         input_expense_name()
-    elif choice == '5':
+    elif choice == 5:
         print('Allocate to Savings Fund')
         input_savings_reason()
         expense_group = 'SAVINGS'
     elif choice == 6:
-    # Show Expenses in Data Frame 
         show_report()
         break
     # elif not re.search(r'^[-+]?[0-6]', choice):
