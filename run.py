@@ -132,19 +132,17 @@ def input_savings_number():
     Prompts user to enter value of savings
     Only takes integers as inputs 
     """
-    while True:
-        # global price
-        price = input('Enter the amount you would like to allocate\n')
-        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
-            print(
-                'Invalid input. Please enter a number to add to savings'
-                )
-            input_savings_number()
-        else:
-            formatted_price = round(float(price), 2)
-            add_expense(
-                item_or_resource, formatted_price, date, expense_group)
-            input_choices()
+    price = input('Enter the amount you would like to allocate\n')
+    if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
+        print(
+            'Invalid input. Please enter a number to add to savings'
+            )
+        input_savings_number()
+    else:
+        formatted_price = round(float(price), 2)
+        add_expense(
+            item_or_resource, formatted_price, date, expense_group)
+        input_choices()
 
 
 def input_savings_reason():
