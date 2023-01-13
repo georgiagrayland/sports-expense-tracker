@@ -173,7 +173,7 @@ def input_savings_reason():
 
 # Check input choice from the user - make this a function to call in main?
 while True:
-    if choice == '0':
+    if choice == 0:
         print('You are exiting the program')
         break
     elif choice == 1:
@@ -201,11 +201,12 @@ while True:
         break
     # elif not re.search(r'^[-+]?[0-6]', choice):
         # print('Invalid input, please enter a value from the options!')
+        # input_choices()
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
-        break
+        input_choices()
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
 
 
