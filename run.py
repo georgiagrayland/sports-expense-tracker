@@ -92,9 +92,11 @@ def input_choices():
         choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
         print(Style.RESET_ALL)
         if 0 <= choice <= 6:
-            print('Activate')
+            print()
         else:
-            print("Input is not a valid number 11")
+            print(
+                Fore.RED + "Please enter a number between 0-6", end='')
+            print(Style.RESET_ALL)
             input_choices()
     except ValueError:
         print(Fore.RED + 'Invalid entry. Please choose from the options')
