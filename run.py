@@ -91,7 +91,7 @@ def input_choices():
     print('0. Exit and Clear\n')
     try:
         global choice
-        choice = int(input(Fore.YELLOW + 'Please choose an action: '))
+        choice = int(input(Fore.YELLOW + 'Please choose an action:\n'))
         print(Style.RESET_ALL)
         if 0 <= choice <= 6:
             print()
@@ -140,7 +140,7 @@ def input_expense_name():
     """
     global item_or_resource
     item_or_resource = input(
-            f'Enter the name of this {expense_group} expense\n')
+            f'Enter the name of this {expense_group} expense:\n')
     if item_or_resource == "":
         print(Fore.RED+'Please assign an expense name!')
         print(Style.RESET_ALL)
@@ -154,7 +154,7 @@ def input_savings_number():
     Prompts user to enter value of savings
     Only takes integers as inputs
     """
-    price = input('Enter the amount you would like to allocate\n')
+    price = input('Enter the amount you would like to allocate:\n')
     if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
         print(
             Fore.RED+'Invalid input. Please enter a number to add to savings'
@@ -178,7 +178,7 @@ def input_savings_reason():
     """
     global item_or_resource
     item_or_resource = input(
-        'Enter the reason for allocating funds to savings\n')
+        'Enter the reason for allocating funds to savings:\n')
     if item_or_resource == "":
         print('Please assign an expense name')
         input_savings_reason()
