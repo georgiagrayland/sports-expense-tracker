@@ -75,6 +75,21 @@ def show_intro():
 show_intro()
 
 
+def check_input(choice):
+    """
+    Checks the user inputs a number not a string
+    """
+    try:
+        choice = int(choice)
+        if choice >= 0 and choice <= 6:
+            return True
+        else:
+            print("Invalid input. Please enter a number between 0 and 6.")
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 6.")
+    return False
+
+
 def input_choices():
     """
     Shows input choices to the user 
@@ -86,11 +101,14 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    # while True:
-    #try:
-    global choice
-    choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
-    print(Style.RESET_ALL)
+    while True:
+        global choice
+        choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
+        print(Style.RESET_ALL)
+        if check_input(choice):
+            break
+        # if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', choice):
+        # print('Please enter a number from the options!')
         # break
     #except ValueError:
         #print(
@@ -262,3 +280,16 @@ while True:
                     item_or_resource, formatted_price, date, expense_group)
                 break
 """
+
+    """
+def check_input(choice):
+    try:
+        choice = int(choice)
+        if choice >= 0 and choice <= 6:
+            return True
+        else:
+            print("Invalid input. Please enter a number between 0 and 6.")
+    except ValueError:
+        print("Invalid input. Please enter a number between 0 and 6.")
+    return False
+    """
