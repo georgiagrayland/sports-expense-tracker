@@ -51,7 +51,7 @@ def show_report():
     expense_report = expense_report.fillna('')
     # Save the report
     expense_report.to_csv('report.csv')
-    # Show Report
+    # Show Report to user 
     print(expense_report)
     print()
 
@@ -74,11 +74,9 @@ def show_intro():
 
 show_intro()
 
-
+"""
 def check_input(choice):
-    """
-    Checks the user inputs a number not a string
-    """
+    # Checks the user inputs a number not a string
     try:
         choice = int(choice)
         if choice >= 0 and choice <= 6:
@@ -88,6 +86,7 @@ def check_input(choice):
     except ValueError:
         print("Invalid input. Please enter a number between 0 and 6.")
     return False
+"""
 
 
 def input_choices():
@@ -102,9 +101,13 @@ def input_choices():
     print(Fore.CYAN + '6. Save Expenses and Show My Report', end='')
     print(Style.RESET_ALL)
     print('0. Exit and Clear\n')
-    global choice
-    choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
-    print(Style.RESET_ALL)
+    try:
+        global choice
+        choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
+        print(Style.RESET_ALL)
+    except ValueError:
+        print(Fore.RED + 'Invalid entry. Please choose from the options')
+        print(Style.RESET_ALL)
     # if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', choice):
         # print('Please enter a number from the options!')
         # break
