@@ -89,7 +89,7 @@ def input_choices():
     print('0. Exit and Clear\n')
     try:
         global choice
-        choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
+        choice = int(input(Fore.YELLOW + 'Please choose an action: '))
         print(Style.RESET_ALL)
         if 0 <= choice <= 6:
             print()
@@ -116,7 +116,8 @@ def input_expense_price():
     price = input('Enter the price of this expense: \n')
     if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
         print(
-            'Invalid input. Please enter a number')
+            Fore.RED+'Invalid input. Please enter a number!', end='')
+        print(Style.RESET_ALL)
         input_expense_price()
     else:
         formatted_price = round(float(price), 2)
@@ -153,15 +154,17 @@ def input_savings_number():
     price = input('Enter the amount you would like to allocate\n')
     if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
         print(
-            'Invalid input. Please enter a number to add to savings'
+            Fore.RED+'Invalid input. Please enter a number to add to savings'
             )
+        print(Style.RESET_ALL)
         input_savings_number()
     else:
         formatted_price = round(float(price), 2)
         add_expense(
             item_or_resource, formatted_price, date, expense_group)
-        print('You allocated funds to savings.')
-        print('What would you like to do next?\n')
+        print(Fore.MAGENTA + 'You allocated funds to savings.')
+        print('What would you like to do next?')
+        print(Style.RESET_ALL)
         input_choices()
 
 
@@ -207,5 +210,7 @@ while True:
         expense_group = 'SAVINGS'
         input_savings_reason()
     elif choice == 6:
+        print(Fore.GREEN+'Showing your Report...')
+        print(Style.RESET_ALL)
         show_report()
         break
