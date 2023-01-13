@@ -22,7 +22,7 @@ expense_group = ""
 formatted_price = ""
 
 
-# Function to add expenses to lists and structure input data 
+# Function to add expenses to lists and structure input data
 def add_expense(item_or_resource, price, date, expense_group):
     """
     Adds all aspects of each expense to a list.
@@ -51,7 +51,7 @@ def show_report():
     expense_report = expense_report.fillna('')
     # Save the report
     expense_report.to_csv('report.csv')
-    # Show Report to user 
+    # Show Report to user
     print(expense_report)
     print()
 
@@ -78,7 +78,8 @@ show_intro()
 
 def input_choices():
     """
-    Shows input choices to the user 
+    Shows input choices to the user
+    presents and validates user input
     """
     print('1. Create Equipment Expense')
     print('2. Create Coaching Expense')
@@ -151,7 +152,7 @@ def input_expense_name():
 def input_savings_number():
     """
     Prompts user to enter value of savings
-    Only takes integers as inputs 
+    Only takes integers as inputs
     """
     price = input('Enter the amount you would like to allocate\n')
     if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
@@ -183,7 +184,7 @@ def input_savings_reason():
         input_savings_reason()
     else:
         input_savings_number()
-  
+
 
 # Processing program
 # Check input choice from the user
@@ -199,7 +200,7 @@ while True:
         print('Add Coaching Cost')
         expense_group = 'COACHING'
         input_expense_name()
-    elif choice == 3: 
+    elif choice == 3:
         print('Add Transport Cost')
         expense_group = 'TRANSPORT'
         input_expense_name()
