@@ -101,13 +101,10 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    while True:
-        global choice
-        choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
-        print(Style.RESET_ALL)
-        if check_input(choice):
-            break
-        # if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', choice):
+    global choice
+    choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
+    print(Style.RESET_ALL)
+    # if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', choice):
         # print('Please enter a number from the options!')
         # break
     #except ValueError:
@@ -143,16 +140,16 @@ def input_expense_name():
     User inputs name of expense under chosen group
     Requires input to continue to price input
     """
-    while True:
-        global item_or_resource
-        item_or_resource = input(
-                f'Enter the name of this {expense_group} expense\n')
-        if item_or_resource == "":
-            print('Please assign an expense name!')
-            input_expense_name()
-        else:
-            input_expense_price()
-            break
+    # while True:
+    global item_or_resource
+    item_or_resource = input(
+            f'Enter the name of this {expense_group} expense\n')
+    if item_or_resource == "":
+        print('Please assign an expense name!')
+        input_expense_name()
+    else:
+        input_expense_price()
+            #break
 
 
 def input_savings_number():
