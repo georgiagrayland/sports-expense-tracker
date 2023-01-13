@@ -140,7 +140,8 @@ def input_expense_name():
     item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
     if item_or_resource == "":
-        print('Please assign an expense name!')
+        print(Fore.RED+'Please assign an expense name!')
+        print(Style.RESET_ALL)
         input_expense_name()
     else:
         input_expense_price()
