@@ -86,8 +86,11 @@ def input_choices():
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
     global choice
-    choice = input('Please choose an action: \n')
+    choice = int(input('Please choose an action: \n'))
     print()
+
+
+input_choices()
 
 
 def input_expense_price():
@@ -166,9 +169,9 @@ def input_savings_reason():
 # while True:  # choice != 0:  # Put this while loop in a function??
     # Create and display input choice list to users
     # show_intro()
-input_choices()
-choice = input('Please choose an action: \n')
-print()
+# input_choices()
+# choice = input('Please choose an action: \n')
+# print()
 
 # Check input choice from the user - make this a function to call in main?
 while True:
@@ -179,7 +182,7 @@ while True:
         # print('Add Equipment Cost')
         expense_group = 'EQUIPMENT'
         input_expense_name()
-    elif choice == '2':
+    elif choice == 2:
         print('Add Coaching Cost')
         expense_group = 'COACHING'
         input_expense_name()
@@ -195,12 +198,12 @@ while True:
         print('Allocate to Savings Fund')
         input_savings_reason()
         expense_group = 'SAVINGS'
-    elif choice == '6':
+    elif choice == 6:
     # Show Expenses in Data Frame 
         show_report()
         break
-    elif not re.search(r'^[-+]?[0-6]', choice):
-        print('Invalid input, please enter a value from the options!')
+    # elif not re.search(r'^[-+]?[0-6]', choice):
+        # print('Invalid input, please enter a value from the options!')
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
     else:
         print('You chose an invalid number.')
