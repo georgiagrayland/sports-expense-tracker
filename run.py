@@ -94,8 +94,9 @@ def input_choices():
         if 0 <= choice <= 6:
             print()
         else:
+            print(Fore.RED + 'Invalid number')
             print(
-                Fore.RED + "Please enter a number between 0-6", end='')
+                Fore.RED + "Please enter a number 0-6!", end='')
             print(Style.RESET_ALL)
             input_choices()
     except ValueError:
@@ -208,8 +209,3 @@ while True:
     elif choice == 6:
         show_report()
         break
-    # else:
-        # print(Fore.RED + 'You chose an invalid number.')
-        # print('Please choose a number option between 0 and 6')
-        # print(Style.RESET_ALL)
-        # input_choices()
