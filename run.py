@@ -109,6 +109,8 @@ def input_expense_price():
         formatted_price = round(float(price), 2)
         add_expense(
             item_or_resource, formatted_price, date, expense_group)
+        print('You added an expense. What you you like to do next?')
+        print()
         input_choices()
 
 
