@@ -85,10 +85,12 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    global choice
-    choice = int(input('Please choose an action: \n'))
-    print()
-
+    try:
+        global choice
+        choice = int(input('Please choose an action: \n'))
+    except ValueError as exc:
+        raise ValueError(f'Invalid input {exc}. Please enter a number!')
+    
 
 input_choices()
 
@@ -199,7 +201,7 @@ while True:
     elif choice == 6:
         show_report()
         break
-    # elif not re.search(r'^[-+]?[0-6]', choice):
+    #elif not re.search(r'^[-+]?[0-6]', choice):
         # print('Invalid input, please enter a value from the options!')
         # input_choices()
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
