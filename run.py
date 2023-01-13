@@ -181,8 +181,6 @@ def input_savings_reason():
     Prompts user to input reason for allocating funds to savings
     Requires input to continue
     """
-    # if choice == '5':
-    # while True:
     global item_or_resource
     item_or_resource = input(
         'Enter the reason for allocating funds to savings\n')
@@ -193,16 +191,9 @@ def input_savings_reason():
         input_savings_number()
   
 
-# MAKE THIS A FUNCTION??
-# Output and processing program
-# while True:  # choice != 0:  # Put this while loop in a function??
-    # Create and display input choice list to users
-    # show_intro()
-# input_choices()
-# choice = input('Please choose an action: \n')
-# print()
+# Processing program
 
-# Check input choice from the user - make this a function to call in main?
+# Check input choice from the user
 while True:
     if choice == 0:
         print('You are exiting the program')
