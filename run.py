@@ -2,8 +2,8 @@
 
 # Import libraries
 from datetime import date
-from colorama import Fore, Back, Style
 import re
+from colorama import Fore, Style
 import numpy as np
 import pandas as pd
 
