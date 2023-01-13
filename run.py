@@ -14,7 +14,7 @@ EXPENSE_GROUPS = []
 
 # Global Variables
 date = date.today()
-choice = 1
+choice = -1
 item_or_resource = ""
 price = ""
 expense_group = ""
@@ -85,6 +85,9 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
+    global choice
+    choice = input('Please choose an action: \n')
+    print()
 
 
 def input_expense_price():
@@ -196,12 +199,13 @@ while True:
     # Show Expenses in Data Frame 
         show_report()
         break
-    elif not re.search(r'^[-+]?[0-6]+$', choice):
+    elif not re.search(r'^[-+]?[0-6]', choice):
         print('Invalid input, please enter a value from the options!')
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
+        break
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
 
 
