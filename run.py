@@ -99,7 +99,7 @@ def input_choices():
     print('3. Create Transport Expense')
     print('4. Create Clothing or Footwear Expense')
     print('5. Allocate funds to team savings')
-    print(Fore.CYAN + '6. Save Expenses and Show My Report')
+    print(Fore.CYAN + '6. Save Expenses and Show My Report', end='')
     print(Style.RESET_ALL)
     print('0. Exit and Clear\n')
     global choice
