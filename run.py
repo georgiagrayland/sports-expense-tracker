@@ -195,6 +195,7 @@ while True:
     elif choice == '6':
     # Show Expenses in Data Frame 
         show_report()
+        break
     elif not re.search(r'^[-+]?[0-6]+$', choice):
         print('Invalid input, please enter a value from the options!')
     # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
