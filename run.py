@@ -85,12 +85,14 @@ def input_choices():
     print('5. Allocate funds to team savings')
     print('6. Save Expenses and Show My Report')
     print('0. Exit and Clear\n')
-    try:
-        global choice
-        choice = int(input('Please choose an action: \n'))
-    except ValueError as exc:
-        raise ValueError(f'Invalid input {exc}. Please enter a number!')
-    
+    while True:
+        try:
+            global choice
+            choice = int(input('Please choose an action: \n'))
+            break
+        except ValueError:
+            print('Invalid input. Please enter a number from the options!')
+
 
 input_choices()
 
