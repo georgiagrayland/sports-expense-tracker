@@ -147,7 +147,6 @@ def input_expense_name():
     User inputs name of expense under chosen group
     Requires input to continue to price input
     """
-    # while True:
     global item_or_resource
     item_or_resource = input(
             f'Enter the name of this {expense_group} expense\n')
@@ -156,7 +155,6 @@ def input_expense_name():
         input_expense_name()
     else:
         input_expense_price()
-            #break
 
 
 def input_savings_number():
@@ -195,7 +193,6 @@ def input_savings_reason():
   
 
 # Processing program
-
 # Check input choice from the user
 while True:
     if choice == 0:
@@ -225,6 +222,7 @@ while True:
         show_report()
         break
     else:
-        print('You chose an invalid number.')
-        print('Please choose a number option between 0 and 6\n')
+        print(Fore.RED + 'You chose an invalid number.')
+        print('Please choose a number option between 0 and 6')
+        print(Style.RESET_ALL)
         input_choices()
