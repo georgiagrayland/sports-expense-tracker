@@ -91,9 +91,15 @@ def input_choices():
         global choice
         choice = int(input(Fore.YELLOW + 'Please choose an action: \n'))
         print(Style.RESET_ALL)
+        if 0 <= choice <= 6:
+            print('Activate')
+        else:
+            print("Input is not a valid number 11")
+            input_choices()
     except ValueError:
         print(Fore.RED + 'Invalid entry. Please choose from the options')
         print(Style.RESET_ALL)
+        input_choices()
 
 
 input_choices()
@@ -200,8 +206,8 @@ while True:
     elif choice == 6:
         show_report()
         break
-    else:
-        print(Fore.RED + 'You chose an invalid number.')
-        print('Please choose a number option between 0 and 6')
-        print(Style.RESET_ALL)
-        input_choices()
+    # else:
+        # print(Fore.RED + 'You chose an invalid number.')
+        # print('Please choose a number option between 0 and 6')
+        # print(Style.RESET_ALL)
+        # input_choices()
