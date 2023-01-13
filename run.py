@@ -208,7 +208,7 @@ while True:
         print('You are exiting the program')
         break
     elif choice == 1:
-        # print('Add Equipment Cost')
+        print('Add Equipment Cost')
         expense_group = 'EQUIPMENT'
         input_expense_name()
     elif choice == 2:
@@ -230,67 +230,7 @@ while True:
     elif choice == 6:
         show_report()
         break
-    #elif not re.search(r'^[-+]?[0-6]', choice):
-        # print('Invalid input, please enter a value from the options!')
-        # input_choices()
-    # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
     else:
         print('You chose an invalid number.')
         print('Please choose a number option between 0 and 6\n')
         input_choices()
-    # input_choices()  # CHANGE THIS TO SHOW OPTIONS WITH NO INTRO??
-
-
-# Create inputs for user to add price and expense name
-    
-    """
-    if choice == '1' or choice == '2' or choice == '3' or choice == '4':
-        item_or_resource = input(
-            f'Enter the name of this {expense_group} expense\n')
-        if item_or_resource == "":
-            print('Please assign an expense name')
-        price = input('Enter the price of this expense: \n')
-        if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
-            print(
-                'Invalid input. Please enter a number')
-            # price = input('Enter the price of this expense: \n')
-        else:
-            formatted_price = round(float(price), 2)
-            add_expense(
-                item_or_resource, formatted_price, date, expense_group)
-
-
-
-    if choice == '5':
-        while True:
-            item_or_resource = input(
-                f'Enter the reason for allocating funds to {expense_group}\n')
-            if item_or_resource == "":
-                print('Please assign an expense name')
-                continue
-            price = input('Enter the amount you would like to allocate\n')
-            if not re.search(r'^[-+]?[0-9]*\.?[0-9]+$', price):
-                print(
-                    'Invalid input. Please enter an amount to add to savings'
-                )
-            # price = input('Enter the amo)
-                break
-            else:
-                formatted_price = round(float(price), 2)
-                add_expense(
-                    item_or_resource, formatted_price, date, expense_group)
-                break
-"""
-
-    """
-def check_input(choice):
-    try:
-        choice = int(choice)
-        if choice >= 0 and choice <= 6:
-            return True
-        else:
-            print("Invalid input. Please enter a number between 0 and 6.")
-    except ValueError:
-        print("Invalid input. Please enter a number between 0 and 6.")
-    return False
-    """
