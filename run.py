@@ -194,8 +194,8 @@ while True:
         input_expense_name()
     elif choice == 5:
         print('Allocate to Savings Fund')
-        input_savings_reason()
         expense_group = 'SAVINGS'
+        input_savings_reason()
     elif choice == 6:
         show_report()
         break
