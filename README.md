@@ -252,6 +252,85 @@ Upon starting the program, users are presented with a list of actions to take. T
 - There are no unfixed bugs in the deployed app. 
 - Throughout creation, the *global* keyword had to be added to some variables so that they could be accessed via each individual step and change depending on user input. 
 
+### Code Testing & Validation
+I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to validate the code, checking for errors, and warning messages.
+- Code was edited according to errors/warnings shown from the validator e.g. removing whitespace, editing indentation, and removing unused imports. 
+
+## Known Issues and Constraints
+**Price Input**
+- When a user inputs a number for the price of an expense, they are able to put in any number from 1 or above. They are also able to add a number with multiple decimal places (e.g., 27.656766), and this will be automatically rounded to 2 decimal places in the final report (as is standard for prices). However, a user cannot add a price with 2 decimal places that is less than 1/10th of their chosen currency. 
+    - For example, a user can enter an amount of 1.10, however they cannot add an expense with a price of 1.09. So the minimum cents/pennies that is possible for a single expense over 1 is 10. 
+    - This has been left as it does not break the code, the user is just presented with a message to input a different amount if they add a price with a decimal of less than 0.1.
+
+**Expense Name**
+- For the name of an expense or savings allocation, the user is not able to proceed without entering something into the input. However, if they are to press the spacebar any number of times in this input and press enter, the program proceeds. I have left this in conjunction with my logic that the user is able to enter whatever they wish for the name of an expense, and putting in a blank space in this way is a deliberate action by the user rather than just pressing enter. 
+- This is in line with user feedback and real-world examples, where sports teams and individuals may add expenses or allocate funds to savings under whatever reason they choose, and there may be miscellaneous expenses. 
+
+<hr>
+
+## Deployment 
+
+### Using GitHub & Gitpod 
+
+To deploy this command-line interface application, I used the Code Institute Python Essentials Gitpod Template. Using this enables the program to run and be viewed on Heroku using a mock terminal in the browser. 
+
+**Using the Template**
+1. In the GitHub repository, click the ‘use this template’ button.
+2. Add a repostiory name for your project.
+3. Click Create Repository from Template to create a new repository using this template. 
+4. Once this has been done, in the new GitHub repository, click the Gitpod button to open the workspace. 
+
+- Committing work should be something done often. These actions should have clear, concise and explanatory messages, using the following commands in the terminal in Gitpod:
+- ```git add . ```
+- ``` git commit -m ‘Your commit message’ ``` - this commits changes to a local repository
+- ```git push``` - pushes all committed changes made in the previous step to the GitHub repository. 
+
+*Forking the GitHub Repository* 
+
+Forks are used to propose changes to someone else’s project or to use someone else’s project as a starting point for your own idea. By forking a GitHub repository you are making a copy of the original repository and can make changes to it without affecting the original repository. 
+1. Find GitHub repository you wish to clone
+2. In the top right corner of the page, click the ‘Fork’ button 
+3. You will now have a ‘Forked’ version of a repository which is a copy of the original to work on. 
+
+*Cloning the GitHub Repository*
+
+Cloning a repository will allow you to download a local version of it to be worked on. This can be done by:
+Find the GitHub repository. 
+1. Press the arrow on the ‘code’ button. 
+2. Copy the link shown in the drop-down menu.
+3. Open Gitpod and select the directory location where you would like to clone to be created and stored. 
+4. In the terminal type ‘git clone’ and paste the GitHub repository link. 
+
+
+### Creating an Application with Heroku 
+
+To deploy this application in Heroku I followed the steps from the Code Institute Tutorial:
+
+1. Insert the following command in the Gitpod terminal: pip3 freeze > requirements.txt - this will install your project dependencies so Heroku can read them. 
+2. Go to www.Heroku.com and log in or create an account if you do not already have one. 
+3. Click the New dropdown in the Heroku dashboard & select Create New App
+4. Enter a name for your project. Note: all apps in Heroku must have a unique name, and Heroku will prompt you if you need to change it. 
+5. Select your region (US/Europe)
+
+*Heroku Settings:*
+You will need to set Environment Variables in Heroku. This is necessary for deployment. 
+* In the settings tab in Heroku, click on Reveal Config Vars and set the following variables:
+    - Add key: PORT & value: 8000 
+    - If your project is using credentials, you will need to add the credentials as a variable. Key: CREDS, value: paste contents of project creds JSON. 
+* Buildpacks are also required for deployment. For this project, Python & Node.js were added (in this order). 
+
+*Heroku Deployment in the Deploy tab:* 
+1. Connect your Heroku Account to the specific GitHub repository for the project:
+    - Click on the ```Deploy``` tab in Heroku and choose ```GitHub-Connect to GitHub```.
+    - Enter the GitHub repository name and click ```search``` to find the match.
+    - Choose the correct repository for the application and click ```Connect```.
+2. You can either elect to deploy a project manually or automatically. Automatic deployment will generate a new application every time you push to GitHub from the Gitpod workspace, whereas manual deployment requires you to click the ‘Deploy Branch’ button on Heroku whenever changes in the workspace are made. 
+3. Once you have chosen a deployment method, and clicked Deploy Branch, Heroku will start building you app. Once this is complete you will see a View button. Click this to open your application in the browser. 
+
+
+
+
+
 
 
 
