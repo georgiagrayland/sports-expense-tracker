@@ -54,6 +54,9 @@ def show_report():
     # Show Report to user
     print(expense_report)
     print()
+    print(Fore.MAGENTA+'Continue adding expenses?')
+    print(Style.RESET_ALL)
+    input_choices()
 
 
 def show_intro():
