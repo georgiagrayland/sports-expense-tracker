@@ -307,7 +307,7 @@ Find the GitHub repository.
 To deploy this application in Heroku I followed the steps from the Code Institute Tutorial:
 
 1. Insert the following command in the Gitpod terminal: pip3 freeze > requirements.txt - this will install your project dependencies so Heroku can read them. 
-2. Go to www.Heroku.com and log in or create an account if you do not already have one. 
+2. Go to Heroku.com and log in or create an account if you do not already have one. 
 3. Click the New dropdown in the Heroku dashboard & select Create New App
 4. Enter a name for your project. Note: all apps in Heroku must have a unique name, and Heroku will prompt you if you need to change it. 
 5. Select your region (US/Europe)
@@ -325,8 +325,32 @@ You will need to set Environment Variables in Heroku. This is necessary for depl
     - Enter the GitHub repository name and click ```search``` to find the match.
     - Choose the correct repository for the application and click ```Connect```.
 2. You can either elect to deploy a project manually or automatically. Automatic deployment will generate a new application every time you push to GitHub from the Gitpod workspace, whereas manual deployment requires you to click the ‘Deploy Branch’ button on Heroku whenever changes in the workspace are made. 
-3. Once you have chosen a deployment method, and clicked Deploy Branch, Heroku will start building you app. Once this is complete you will see a View button. Click this to open your application in the browser. 
+3. Once you have chosen a deployment method, and clicked Deploy Branch, Heroku will start building you app. Once this is complete you will see a ```View``` button. Click this to open your application in the browser. 
 
+(Heroku Screenshot??)
+
+<hr>
+
+## Credits 
+
+### Code 
+
+- Inspiration for some parts of the code and using a Pandas data frame were taken from the [Computer Science Youtube Channel](https://www.youtube.com/@ComputerSciencecompsci112358). This has also been signalled in comments within relevant parts of the code. 
+- [Chat GPT](https://chat.openai.com/chat)
+    - Inspiration for utilisation of the Re module was taken from ChatGPT to help me find a way to validate my inputs. 
+- [Stack Overflow](https://stackoverflow.com/)
+    - help with understanding how to use a Try/Except Block effectively. 
+- [W3C Schools](https://www.w3schools.com/python/default.asp)
+    - Help with understanding some Python concepts.
+- [PyPi](https://pypi.org/project/colorama/) - Instructions on how to use colorama taken from the PyPI Website. 
+
+
+### Content
+
+- Inspiration for the initial concept of this program came from the [DataQuest Website](https://www.dataquest.io/blog/python-projects-for-beginners/). However, the decision to make it specific for a sports team or individual is my own idea and adaptation. 
+
+### Acknowledgements 
+I would like to thank my mentor Harry Dhillion for his support throughout the course of this project, as well as my peers at Code Institute for their support and feedback. 
 
 
 
