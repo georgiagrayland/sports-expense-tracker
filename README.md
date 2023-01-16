@@ -24,9 +24,6 @@ This is a command-line-interface application designed for a user to add expenses
 - As a user, I want to be able to see my expense report, with all of the information about each expense that I input and to be able to see VAT added to the price. 
 - As a user, I want to be able to continuously add further expenses and savings funds to my report as I am using the program. 
 
-### Structure 
-(Insert Lucidchart flowchart)
-
 
 ## Features
 -----
@@ -61,6 +58,7 @@ The features included in this program are listed in the main menu when it is run
 **Expense Price** 
 - Once the user has entered a name for the expense, they are then invited to enter a price.
 - This must be a number >= 1 and can be to as many decimal places as they wish.
+- The instruction to the user that the number must be 1 or above is in the introductory message.
 	- This number will automatically be rounded to 2 decimal places when shown in the expense report 
  - Once a valid price has been entered the user is presented with a message saying they entered an expense:
 
