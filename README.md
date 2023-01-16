@@ -104,23 +104,20 @@ The features included in this program are listed in the main menu when it is run
 
 - There is also a TOTAL row at the bottom of the data frame, which includes the total of all prices as they were input, and the total of all prices +VAT from the VAT column:
 
-(Screenshot of a full report)
-
+![Report Example](images/full-report.png)
 
 
 - After showing the report, the user is able to continue to add expenses/savings to their report by continuing with the inputs in previous steps.
-
-
 - If they do this then elect to show their report again, all current & new expenses will be shown in a new data frame. 
 - This runs continuously and the user is able to keep adding expenses/savings, and multiple for each group:
 
-(new expense report with old ones still there)
+![Extended Report Example](images/added-report.png)
 
 - The user will stop being presented with options once 0 is chosen for the ‘choices’ input to exit the program. 
 
 *Note: if a user choose 6 on the first input without entering any expense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
 
-(screenshot of this scenario)
+![No Data Added Report](images/no-data.png)
 
 
 ### 0 - Exit and Clear
@@ -137,8 +134,6 @@ I have used several technologies to create this program and enable it to run:
     * Python is the essential programming language in this application to write all of the code and make it fully functional.
 
 **In addition to core Python, I have used the following Python Modules:**
-
-(screenshot of imports in code)
 
 - [Datetime](https://docs.python.org/3/library/datetime.html)
     - Used the *date* import from this module to add the date of each expense to an expense report. 
@@ -159,16 +154,16 @@ I have used several technologies to create this program and enable it to run:
     - It also shows a column with a price+VAT calculation and a total row at the bottom. 
     - The Pandas data frame creates an easily understandable visual representation of the users' expenses and allows then to track these over time by presenting in a table format. 
 
-* GitHub
+* [GitHub](https://github.com/)
     - Used to store code once it has been pushed.
 
 * Gitpod
     - Used as the development environment.
 
-* Heroku 
+* [Heroku](https://id.heroku.com/login)
     - Where this project is deployed. 
 
-* Lucid
+* [Lucid](https://www.lucidchart.com/pages/)
     - Used to map the flowchart for this project. 
 
 <hr>
@@ -205,7 +200,8 @@ Upon starting the program, users are presented with a list of actions to take. T
 - To do this validation, I used a Try/Except block for the ‘choices’ input. I set the ‘choices’ input as an integer and set the else block to display the error message if anything other than an integer is entered by the user. 
     - The 'Else' statement checks if an integer entered is between 0-6. If not, it rasies an error message to the user. 
     - The 'Except' block rasies a ValueError if the user enters anything else, e.g. a letter, word, character, or nothing. 
-(Code screenshot)
+
+![Tru/Except Block](images/try-except.png)
 
 - Once a valid number is entered, the relevant function is called to proceed to the next step depending on the input chosen by the user.
 
@@ -234,7 +230,7 @@ Upon starting the program, users are presented with a list of actions to take. T
 (screeshot)
 
 
-- To achieve this validation, I utilised the Re module to search for integers and floats withini a certain range:
+- To achieve this validation, I utilised the Re module to search for integers and floats within a certain range:
 
 (Screenshot of code)
 

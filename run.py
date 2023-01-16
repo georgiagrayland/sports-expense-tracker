@@ -200,6 +200,7 @@ Computer Science YouTube Channel
 while True:
     if choice == 0:
         print('You are exiting the program')
+        print('Thank you for using the Expense tracker')
         break
     elif choice == 1:
         print('Add Equipment Cost')
@@ -225,4 +226,4 @@ while True:
         print(Fore.GREEN+'Showing your Report...')
         print(Style.RESET_ALL)
         show_report()
-        # break
+        
