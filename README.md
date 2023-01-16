@@ -1,31 +1,135 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Sports Expense Tracker 
 
-Welcome georgiagrayland,
+(amiresponsive screenshot)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Live application can be found here:
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+This is a command-line-interface application designed for a user to add expenses and savings to specific sport-related categories, and view a full expense report with their data with VAT added. This project has been designed for educational purposes and uses the Code Institute mock terminal to run in the server. 
 
-## Creating the Heroku app
+<hr>
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## User Experience 
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Design
+- As this is a command-line application there is no design featured which includes custom HTML & CSS. 
+- However, I made the decision to import and use the **Colorama** module within my Python code. 
+- **Colorama** provides color to terminal text when applied, and I have adopted this to add speicific colours to certain message types in this project. For example, an error message for invalid user input shows as red, the introduction message shows as green text, and the prompts to invite the user to input data are shown as yellow. 
+- I chose to do this with Colorama to provide visual structure for the user in the flow of the application when run, and also make messages more readable and aesthetically pleasing. 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+### External User's Goals
+- As a user, I want to be able to easily add an expense under a specific category for my Sports team or sports needs. 
+- As a user, I want to be able to add funds to savings with an assigned reason and price. 
+- As a user, I want to be able to save my added expenses and see these in an easily understandable layout with a date included. 
+- As a user, I want to be able to see my expense report, with all of the information about each expense that I input and to be able to see VAT added to the price. 
+- As a user, I want to be able to continuously add further expenses and savings funds to my report as I am using the program. 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+### Structure 
+(Insert Lucidchart flowchart)
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
+## Features
 -----
-Happy coding!
+
+The features included in this program are listed in the main menu when it is run and they can be seen below:
+
+(Insert image of intro message)
+
+### Introductory Message & Instructions:
+
+- The first information the user is presented with is the introductory message (green text), which explains how to use the expense tracker, how to view your report, and how to exit the program. 
+- The introductory message also explains the aim of the app and how it could benefit a sports team. 
+- The options to take the first action are also shown, presenting the user with a selection of categories to input an expense or savings fund. 
+- There is an input at the bottom for the user to enter a number from the options, which only accepts numbers 0-6.
+    - Validation methods and logic for the choices input can be found in the **Testing & Input Validation** section. 
+
+(screenshot)
+
+### 1-4 Add Expense:
+
+- Validation methods and logic for the add expense inputs can be found in the **Testing & Input Validation** section. 
+- If user inputs number 1,2,3, or 4, they are presented with a message saying that they have selected to enter an expense under the chosen group. 
+- The expense categories are: equipment, coaching, transport, and clothing. 
+
+**Expense Name**
+- If one of these categories is selected the user can assign a specific name to an expense under the chosen category:
+
+(screenshot)
+
+- The name of the expense category selected is repeated back to the user and they are invited to add a name for the expense:
+- The user can enter any name they wish for an expense, e.g. 12 Footballs, 1st Team coaching, 22/23 Referees. 
+
+(screenshot)
+
+**Expense Price** 
+- Once the user has entered a name for the expense, they are then invited to enter a price:
+
+(screenshot)
+
+- This must be a number >= 1 and can be to as many decimal places as they wish.
+	- This number will automatically be rounded to 2 decimal places when shown in the expense report 
+ - Once a valid price has been entered the user is presented with a message saying they entered an expense:
+ - The action options are shown again to proceed with adding expenses/savings, or viewing their expense report. This runs continuously until the user enters 0 to exit the program. 
+
+ (screenshot)
+
+
+### 5 - Allocate Funds to Savings
+- If user inputs number 5 to the 'choices' input, they will presented with a message saying they have chosen to allocate funds to the savings for their Sports Team.
+
+**Reason for Allocating Funds**
+- They are asked to enter a reason for allocating funds to savings. *E.g. Training Camp Flights Oct 2023.*
+- This input does not accept empty strings. 
+    - Validation methods and logic for the add expense inputs can be found in the **Testing & Input Validation** section. 
+    - The user can enter any reason for allocating funds to savings, and the input will accept numbers and characters. This decision was made in line with real-world examples of Sports teams using expense trackers, e.g. they may need to enter numbers or characters into expense/savings reasons, as seen in the example above. 
+
+(screenshot)
+
+**Add Savings Amount**
+- Once a reason for allocating funds to savings has been given, the user is invited to enter a number for the price of this. 
+- This input works exactly the same as the **input expense price** input and the functions are almost identical:
+
+(Screenshot)
+
+- Once the user has enetered an amount to allocate to savings, they are shown a message telling them they have done this, and are presented with the options again to add more expenses/savings, show their report, or exit the program:
+
+(Screenshot)
+
+### 6 - Show Report 
+- when the user has entered any expense/savings data and then choses number 6 from the choices input menu, they will be presented with a message and their expense report as a pandas data frame. 
+
+- This report is structured as a pandas data frame, and columns include include:
+    - The name of expense/reason for savings that the user has entered.
+    - The price that the user has entered (automatically rounded to 2 decimal places).
+    - Each expense price +20% for VAT in a separate column
+    - The date each expense was input.
+    - The expense group under which each expense was saved. 
+
+- There is also a TOTAL row at the bottom of the data frame, which includes the total of all prices as they were input, and the total of all prices +VAT from the VAT column:
+
+(Screenshot of a full report)
+
+
+
+- After showing the report, the user is able to continue to add expenses/savings to their report by continuing with the inputs in previous steps.
+
+
+- If they do this then elect to show their report again, all current & new expenses will be shown in a new data frame. 
+- This runs continuously and the user is able to keep adding expenses/savings, and mutliple for each group:
+
+(new expesne report with old ones still there)
+
+- The user will stop being presented with options once 0 is chosen for the ‘choices’ input to exit the program. 
+
+*Note: if a user choose 6 on the first input without entering any epxense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
+
+(screenshot of this scenario)
+
+
+### 0 - Exit and Clear
+- When the user enters 0 in choices input, they are presented with a message telling them they are exiting the program. 
+- The program will run again if they click 'Run Program' above the mock terminal.
+
+(screenshot of exit and clear message)
+
+
