@@ -222,13 +222,11 @@ Upon starting the program, users are presented with a list of actions to take. T
 - If an invalid input is entered, the user is presented with the error message asking for a number, and the price input again. 
 - This input does not accept anything that is not an integer or a float. Testing for this included inputting type errors for a number e.g. 8..22, as well as letters, characters, and empty spaces.
 
-(screeshot)
+![invalid price](images/invalid-price.png)
 
+- To achieve this validation, I utilised the an If statement and the **Re module** to search for integers and floats within a certain range:
 
-- To achieve this validation, I utilised the Re module to search for integers and floats within a certain range:
-
-(Screenshot of code)
-
+![Re Validation](images/re-module.png)
 
 - Once a valid price is input, a message is shown to the user saying they have added an expense/saving fund, and to choose another action. 
 
@@ -242,11 +240,7 @@ Upon starting the program, users are presented with a list of actions to take. T
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to validate the code, checking for errors, and warning messages.
 - Code was edited according to errors/warnings shown from the validator e.g. removing whitespace, editing indentation, and removing unused imports. 
 
-## Known Issues and Constraints
-**Price Input**
-- When a user inputs a number for the price of an expense, they are able to put in any number from 1 or above. They are also able to add a number with multiple decimal places (e.g., 27.656766), and this will be automatically rounded to 2 decimal places in the final report (as is standard for prices). However, a user cannot add a price with 2 decimal places that is less than 1/10th of their chosen currency. 
-    - For example, a user can enter an amount of 1.10, however they cannot add an expense with a price of 1.09. So the minimum cents/pennies that is possible for a single expense over 1 is 10. 
-    - This has been left as it does not break the code, the user is just presented with a message to input a different amount if they add a price with a decimal of less than 0.1.
+## Known Constraints
 
 **Expense Name**
 - For the name of an expense or savings allocation, the user is not able to proceed without entering something into the input. However, if they are to press the spacebar any number of times in this input and press enter, the program proceeds. I have left this in conjunction with my logic that the user is able to enter whatever they wish for the name of an expense, and putting in a blank space in this way is a deliberate action by the user rather than just pressing enter. 
