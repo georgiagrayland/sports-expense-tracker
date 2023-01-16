@@ -162,6 +162,102 @@ I have used several technologies to create this program and enable it to run:
     - It also shows a column with a price+VAT calculation and a total row at the bottom. 
     - The Pandas data frame creates an easily understandable visual representation of the users' expenses and allows then to track these over time by presenting in a table format. 
 
+* GitHub
+    - Used to store code once it has been pushed.
+
+* Gitpod
+    - Used as the development environment.
+
+* Heroku 
+    - Where this project is deployed. 
+
+* Lucid
+    - Used to map the flowchart for this project. 
+
+<hr>
+
+## Testing
+
+### Testing & Input Validation
+
+-  I used the ‘External User’s Goals’ outlined above to perform manual testing on the program to see whether all goals and actions for the user could be achieved. 
+- All of the User’s Goals can be achieved satisfactorily and this has been tested multiple times in the program by myself and others. 
+- Users can use the program without issue or error when the follow the steps and prompts, and the expense report when shown has correct calculations of data input by users. 
+
+### Input Validation
+- As this programme relies heavily on users inputting different types of information at various stages, validating these inputs was extremely important at every step to ensure the application can run. 
+- I used various methods of validating user input. This is because different inputs in the programme require different types of information to be able to proceed to the next step. 
+- All error messages to the user in the program are shown in **red** to allow for clearer messaging and visual structure for the user.  
+
+#### Choices Input 
+Upon starting the program, users are presented with a list of actions to take. This list of actions is repeatedly shown to the user unless they choose to exit the program by pressing 0. 
+- This input **only** accepts an input of a single number 0-6, as shown in the options menu. 
+
+**Error message**
+- If the user inputs an empty string, the error message is shown, asking the user to input a number
+- If the user enters any number that is not either 0,1,2,3,4,5 or 6 - a specific error message is shown saying that the number is invalid, and asks the user to enter a number between 0-6.  
+(screenshot)
+
+ - If the user enters an invalid input, they will be presented with the error message, the options, and a prompt for the input again. This happens continuously until a valid number is entered:
+ (screenshot)
+
+
+- If the user enters anything else, e.g. a letter, word or character, an error message is displayed saying that it was invalid, and to choose an number from the options menu:
+(Screenshots)
+
+- To do this validation, I used a Try/Except block for the ‘choices’ input. I set the ‘choices’ input as an integer and set the else block to display the error message if anything other than an integer is entered by the user. 
+    - The 'Else' statement checks if an integer entered is between 0-6. If not, it rasies an error message to the user. 
+    - The 'Except' block rasies a ValueError if the user enters anything else, e.g. a letter, word, character, or nothing. 
+(Code screenshot)
+
+- Once a valid number is entered, the relevant function is called to proceed to the next step depending on the input chosen by the user.
+
+#### Enter Name of Expense/Savings Allocation
+* Once the user has chosen a number 1-5, they will be presented with what they chose, plus a prompt to enter a name for the expense/ a reason for allocating funds to savings.
+- If the user enters an invalid input, they are presented with the error message and the name input again. Once they have entered something the program will proceed with the next steps. 
+- This input does not accept an empty input, and if the user just presses enter, an error message shows asking to assign an expense name.
+- For this input, I made the decision to allow the user to enter anything of their choice. This is because this is a sports expense tracker, and many sports teams or individuals may need to add characters or numbers to their expenses. e.g. ’12 footballs’, ‘Team 2 Coach’, ’22/23 Court Hire’. This allows the user to enter something that they will understand and be useful for them.
+
+(screenshot)
+
+- To do this validation, I used an if statement to raise the error message for an empty string input:
+
+(Code screenshot)
+
+- Once a name is entered, the function is called to proceed to the next step of adding an expense or savings price. 
+
+#### Price Inputs
+
+- Once the user has entered a name of expense/reason for savings allocation, they are prompted to enter a price. 
+- This input only accepts integers or floats >= 1. So the minimum amount it is possible for a single expense/saving is 1 pound/euro/dollar etc. 
+- This input accepts numbers with decimal places of any number e.g. 3.45555. If a user enters a float with 3 or more decimal places, the price will automatically be rounded to 2 decimal places in the expense report when shown, to conform with price syntax. 
+- If an invalid input is entered, the user is presented with the error message asking for a number, and the price input again. 
+- This input does not accept anything that is not an integer or a float. Testing for this included inputting type errors for a number e.g. 8..22, as well as letters, characters, and empty spaces.
+
+(screeshot)
+
+
+- To achieve this validation, I utilised the Re module to search for integers and floats withini a certain range:
+
+(Screenshot of code)
+
+
+- Once a valid price is input, a message is shown to the user saying they have added an expense/saving fund, and to choose another action:
+
+(Screenshot) 
+
+
+### Bugs and Fixes 
+
+- There are no unfixed bugs in the deployed app. 
+- Throughout creation, the *global* keyword had to be added to some variables so that they could be accessed via each individual step and change depending on user input. 
+
+
+
+
+
+
+
 
 
 
