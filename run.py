@@ -121,7 +121,7 @@ def input_expense_price():
     Only accepts numbers as input
     """
     price = input('Enter the price of this expense: \n')
-    if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
+    if not re.search("^[1-9]\d*(\.\d+)?$", price):
         print(
             Fore.RED+'Invalid input. Please enter a number!', end='')
         print(Style.RESET_ALL)
@@ -160,7 +160,7 @@ def input_savings_number():
     Only takes integers as inputs
     """
     price = input('Enter the amount you would like to allocate:\n')
-    if not re.search(r'^[-+]?[1-9]*\.?[1-9]+$', price):
+    if not re.search("^[1-9]\d*(\.\d+)?$", price):
         print(
             Fore.RED+'Invalid input. Please enter a number to add to savings'
             )
