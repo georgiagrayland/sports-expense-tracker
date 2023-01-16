@@ -1,6 +1,6 @@
 # Sports Expense Tracker 
 
-(amiresponsive screenshot)
+![Amiresponsive](images/responsive.png)
 
 Live application can be found here:
 
@@ -33,7 +33,7 @@ This is a command-line-interface application designed for a user to add expenses
 
 The features included in this program are listed in the main menu when it is run and they can be seen below:
 
-(Insert image of intro message)
+![Features](images/features.png)
 
 ### Introductory Message & Instructions:
 
@@ -43,7 +43,7 @@ The features included in this program are listed in the main menu when it is run
 - There is an input at the bottom for the user to enter a number from the options, which only accepts numbers 0-6.
     - Validation methods and logic for the choices input can be found in the **Testing & Input Validation** section. 
 
-(screenshot)
+![Introduction Message](images/intro.png)
 
 ### 1-4 Add Expense:
 
@@ -52,30 +52,27 @@ The features included in this program are listed in the main menu when it is run
 - The expense categories are: equipment, coaching, transport, and clothing. 
 
 **Expense Name**
-- If one of these categories is selected the user can assign a specific name to an expense under the chosen category:
-
-(screenshot)
-
+- If one of these categories is selected the user can assign a specific name to an expense under the chosen category.
 - The name of the expense category selected is repeated back to the user and they are invited to add a name for the expense:
-- The user can enter any name they wish for an expense, e.g. 12 Footballs, 1st Team coaching, 22/23 Referees. 
+- The user can enter any name they wish for an expense, e.g. 12 Footballs, 1st Team coaching, 22/23 Referees:
 
-(screenshot)
+![Expense Name](images/assign-expense-name.png)
 
 **Expense Price** 
-- Once the user has entered a name for the expense, they are then invited to enter a price:
-
-(screenshot)
-
+- Once the user has entered a name for the expense, they are then invited to enter a price.
 - This must be a number >= 1 and can be to as many decimal places as they wish.
 	- This number will automatically be rounded to 2 decimal places when shown in the expense report 
  - Once a valid price has been entered the user is presented with a message saying they entered an expense:
+
+![Added Price](images/added-price.png)
+
  - The action options are shown again to proceed with adding expenses/savings, or viewing their expense report. This runs continuously until the user enters 0 to exit the program. 
 
- (screenshot)
+![Added expense](images/add-expense.png)
 
 
 ### 5 - Allocate Funds to Savings
-- If user inputs number 5 to the 'choices' input, they will presented with a message saying they have chosen to allocate funds to the savings for their Sports Team.
+- If user inputs number 5 to the 'choices' input, they will presented with a message saying they have chosen to allocate funds to the savings for their Sports Team. 
 
 **Reason for Allocating Funds**
 - They are asked to enter a reason for allocating funds to savings. *E.g. Training Camp Flights Oct 2023.*
@@ -83,17 +80,17 @@ The features included in this program are listed in the main menu when it is run
     - Validation methods and logic for the add expense inputs can be found in the **Testing & Input Validation** section. 
     - The user can enter any reason for allocating funds to savings, and the input will accept numbers and characters. This decision was made in line with real-world examples of Sports teams using expense trackers, e.g. they may need to enter numbers or characters into expense/savings reasons, as seen in the example above. 
 
-(screenshot)
+![Enter Savings](images/add-savings.png)
 
 **Add Savings Amount**
 - Once a reason for allocating funds to savings has been given, the user is invited to enter a number for the price of this. 
 - This input works exactly the same as the **input expense price** input and the functions are almost identical:
 
-(Screenshot)
+![Enter savings amount](images/enter-savings-amount.png)
 
 - Once the user has entered an amount to allocate to savings, they are shown a message telling them they have done this, and are presented with the options again to add more expenses/savings, show their report, or exit the program:
 
-(Screenshot)
+![Entered Savings](images/savings-entered.png)
 
 ### 6 - Show Report 
 - when the user has entered any expense/savings data and then choses number 6 from the choices input menu, they will be presented with a message and their expense report as a pandas data frame. 
@@ -250,7 +247,7 @@ Upon starting the program, users are presented with a list of actions to take. T
 ### Bugs and Fixes 
 
 - There are no unfixed bugs in the deployed app. 
-- Throughout creation, the *global* keyword had to be added to some variables so that they could be accessed via each individual step and change depending on user input. 
+- Throughout creation, the ```global``` keyword had to be added to some variables so that they could be accessed via each individual step and change depending on user input. 
 
 ### Code Testing & Validation
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to validate the code, checking for errors, and warning messages.
