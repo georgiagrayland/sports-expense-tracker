@@ -326,7 +326,7 @@ You will need to set Environment Variables in Heroku. This is necessary for depl
 - Inspiration for the initial concept of this program came from the [DataQuest Website](https://www.dataquest.io/blog/python-projects-for-beginners/). However, the decision to make it specific for a sports team or individual is my own idea and adaptation. 
 
 ### Acknowledgements 
-I would like to thank my mentor Harry Dhillion for his support throughout the course of this project, as well as my peers at Code Institute for their support and feedback. 
+I would like to thank my mentor Harry Dhillon for his support throughout the course of this project, as well as my peers at Code Institute for their support and feedback. 
 
 
 
