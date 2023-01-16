@@ -8,6 +8,8 @@ import numpy as np
 import pandas as pd
 
 # Create empty lists to organise data
+# Inspiration for these names was taken
+# From the Computer Science Youtube Channel
 ITEMS_OR_RESOURCES = []
 PRICES = []
 DATES = []
@@ -191,6 +193,10 @@ def input_savings_reason():
 
 # Processing program
 # Check input choice from the user
+"""
+Inspiration for and some aspects of this while loop was taken from the 
+Computer Science YouTube Channel
+"""
 while True:
     if choice == 0:
         print('You are exiting the program')
