@@ -91,7 +91,7 @@ The features included in this program are listed in the main menu when it is run
 
 (Screenshot)
 
-- Once the user has enetered an amount to allocate to savings, they are shown a message telling them they have done this, and are presented with the options again to add more expenses/savings, show their report, or exit the program:
+- Once the user has entered an amount to allocate to savings, they are shown a message telling them they have done this, and are presented with the options again to add more expenses/savings, show their report, or exit the program:
 
 (Screenshot)
 
@@ -115,13 +115,13 @@ The features included in this program are listed in the main menu when it is run
 
 
 - If they do this then elect to show their report again, all current & new expenses will be shown in a new data frame. 
-- This runs continuously and the user is able to keep adding expenses/savings, and mutliple for each group:
+- This runs continuously and the user is able to keep adding expenses/savings, and multiple for each group:
 
-(new expesne report with old ones still there)
+(new expense report with old ones still there)
 
 - The user will stop being presented with options once 0 is chosen for the ‘choices’ input to exit the program. 
 
-*Note: if a user choose 6 on the first input without entering any epxense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
+*Note: if a user choose 6 on the first input without entering any expense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
 
 (screenshot of this scenario)
 
@@ -131,5 +131,42 @@ The features included in this program are listed in the main menu when it is run
 - The program will run again if they click 'Run Program' above the mock terminal.
 
 (screenshot of exit and clear message)
+
+<hr>
+
+## Technologies Used
+I have used several technologies to create this program and enable it to run:
+* Python
+    * Python is the essential programming language in this application to write all of the code and make it fully functional.
+
+**In addition to core Python, I have used the following Python Modules:**
+
+(screenshot of imports in code)
+
+- [Datetime](https://docs.python.org/3/library/datetime.html)
+    - Used the *date* import from this module to add the date of each expense to an expense report. 
+    - This appends the day to the pandas data frame in the DATE column. 
+    - Example syntax in this application: 23-01-16
+- [Re - Regular Expression](https://docs.python.org/3/library/re.html)
+    - Used to validate price inputs.
+    - I use the ‘search’ function to check that an input is: An integer >=1, or a float. 
+- [Colorama](https://pypi.org/project/colorama/)
+    - Installed and Fore/Style imports used to add and remove color to text in the terminal. 
+	- This is for better UX as color points to messaging and structure for the user. 
+	- For example, error messages for incorrect input are shown to the user coloured in red.
+- [NumPy](https://numpy.org/)
+    -  Used to round all numeric values for price in the Pandas expense report to 2 decimal places (standard numeric syntax for prices). 
+- [Pandas](https://pandas.pydata.org/)
+    -  Pandas was used in this program to create the data frame that presents the expenses report to the user.
+    - This creates a table with rows and columns, and appends user input to the data frame depending on the category chosen in the ‘choices’ input. 
+    - It also shows a column with a price+VAT calculation and a total row at the bottom. 
+    - The Pandas data frame creates an easily understandable visual representation of the users' expenses and allows then to track these over time by presenting in a table format. 
+
+
+
+
+
+
+
 
 
