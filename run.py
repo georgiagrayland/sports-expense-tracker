@@ -219,4 +219,4 @@ while True:
         print(Fore.GREEN+'Showing your Report...')
         print(Style.RESET_ALL)
         show_report()
-        break
+        # break
