@@ -93,7 +93,7 @@ The features included in this program are listed in the main menu when it is run
 ### 6 - Show Report 
 - when the user has entered any expense/savings data and then choses number 6 from the choices input menu, they will be presented with a message and their expense report as a pandas data frame. 
 
-- This report is structured as a pandas data frame, and columns include include:
+- This report is structured as a pandas data frame, and columns include:
     - The name of expense/reason for savings that the user has entered.
     - The price that the user has entered (automatically rounded to 2 decimal places).
     - Each expense price +20% for VAT in a separate column
