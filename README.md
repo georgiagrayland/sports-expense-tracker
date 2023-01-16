@@ -2,7 +2,7 @@
 
 ![Amiresponsive](images/responsive.png)
 
-Live application can be found here:
+Live application can be found here: https://sport-expense-tracker.herokuapp.com/
 
 
 This is a command-line-interface application designed for a user to add expenses and savings to specific sport-related categories, and view a full expense report with their data with VAT added. This project has been designed for educational purposes and uses the Code Institute mock terminal to run in the server. 
