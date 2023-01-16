@@ -115,7 +115,7 @@ The features included in this program are listed in the main menu when it is run
 
 - The user will stop being presented with options once 0 is chosen for the ‘choices’ input to exit the program. 
 
-*Note: if a user choose 6 on the first input without entering any expense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
+*Note: if a user chooses 6 on the first input without entering any expense/savings data, and empty Data Frame will show, and they user will be prompted with the options again:*
 
 ![No Data Added Report](images/no-data.png)
 
@@ -124,7 +124,7 @@ The features included in this program are listed in the main menu when it is run
 - When the user enters 0 in choices input, they are presented with a message telling them they are exiting the program. 
 - The program will run again if they click 'Run Program' above the mock terminal.
 
-(screenshot of exit and clear message)
+![Exit message](images/exit-message.png)
 
 <hr>
 
@@ -188,14 +188,11 @@ Upon starting the program, users are presented with a list of actions to take. T
 **Error message**
 - If the user inputs an empty string, the error message is shown, asking the user to input a number
 - If the user enters any number that is not either 0,1,2,3,4,5 or 6 - a specific error message is shown saying that the number is invalid, and asks the user to enter a number between 0-6.  
-(screenshot)
 
- - If the user enters an invalid input, they will be presented with the error message, the options, and a prompt for the input again. This happens continuously until a valid number is entered:
- (screenshot)
+ - If the user enters an invalid input, they will be presented with the error message, the options, and a prompt for the input again. This happens continuously until a valid number is entered.
+ - If the user enters anything else, e.g. a letter, word or character, an error message is displayed saying that it was invalid, and to choose an number from the options menu:
 
-
-- If the user enters anything else, e.g. a letter, word or character, an error message is displayed saying that it was invalid, and to choose an number from the options menu:
-(Screenshots)
+![Invalid entry](images/invalid-choice.png)
 
 - To do this validation, I used a Try/Except block for the ‘choices’ input. I set the ‘choices’ input as an integer and set the else block to display the error message if anything other than an integer is entered by the user. 
     - The 'Else' statement checks if an integer entered is between 0-6. If not, it rasies an error message to the user. 
@@ -211,11 +208,9 @@ Upon starting the program, users are presented with a list of actions to take. T
 - This input does not accept an empty input, and if the user just presses enter, an error message shows asking to assign an expense name.
 - For this input, I made the decision to allow the user to enter anything of their choice. This is because this is a sports expense tracker, and many sports teams or individuals may need to add characters or numbers to their expenses. e.g. ’12 footballs’, ‘Team 2 Coach’, ’22/23 Court Hire’. This allows the user to enter something that they will understand and be useful for them.
 
-(screenshot)
+![Invalid Name](images/invalid-name.png)
 
-- To do this validation, I used an if statement to raise the error message for an empty string input:
-
-(Code screenshot)
+- To do this validation, I used an if statement to raise the error message for an empty string input. 
 
 - Once a name is entered, the function is called to proceed to the next step of adding an expense or savings price. 
 
@@ -235,9 +230,7 @@ Upon starting the program, users are presented with a list of actions to take. T
 (Screenshot of code)
 
 
-- Once a valid price is input, a message is shown to the user saying they have added an expense/saving fund, and to choose another action:
-
-(Screenshot) 
+- Once a valid price is input, a message is shown to the user saying they have added an expense/saving fund, and to choose another action. 
 
 
 ### Bugs and Fixes 
@@ -319,8 +312,6 @@ You will need to set Environment Variables in Heroku. This is necessary for depl
     - Choose the correct repository for the application and click ```Connect```.
 2. You can either elect to deploy a project manually or automatically. Automatic deployment will generate a new application every time you push to GitHub from the Gitpod workspace, whereas manual deployment requires you to click the ‘Deploy Branch’ button on Heroku whenever changes in the workspace are made. 
 3. Once you have chosen a deployment method, and clicked Deploy Branch, Heroku will start building you app. Once this is complete you will see a ```View``` button. Click this to open your application in the browser. 
-
-(Heroku Screenshot??)
 
 <hr>
 
